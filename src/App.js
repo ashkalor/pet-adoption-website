@@ -1,7 +1,10 @@
+import "./index.css";
+
 function App() {
   return (
     <div>
-      <h2>Let's get started!</h2>
+      <button className="btn--flat">Hello</button>
+      <button className="btn">Hello</button>
     </div>
   );
 }

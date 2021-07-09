@@ -1,15 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
-html {
-  font-family: 'Noto Sans JP', sans-serif;
-}
-
 body {
+  font-family: "Montserrat", sans-serif;
   margin: 0;
-  background-color: #3f3f3f;
+  background-color: #efeded;
 }
 
+.centered {
+  margin: 3rem auto;
+  text-align: center;
+  display: flex;
+  place-items: center;
+}
+
+.focused {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+}
