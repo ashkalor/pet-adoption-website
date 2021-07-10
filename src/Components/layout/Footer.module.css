@@ -1,18 +1,19 @@
 .wrapper {
-  background-color: #8d7564;
+  background-color: #fff;
   padding-bottom: 4rem 0;
 }
 
 .footer {
-  width: 80%;
+  width: 90%;
   height: 30vh;
-  background-color: #8d7564;
+  background-color: #fff;
   color: black;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  margin: 0 10%;
+  margin: 0% 10%;
   padding: 3rem;
 }
 .footer-element {
