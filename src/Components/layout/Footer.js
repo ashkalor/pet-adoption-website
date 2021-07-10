@@ -12,7 +12,7 @@ const Footer = () => {
     <footer className={classes.wrapper}>
       <div className={classes.footer}>
         <div className={classes["footer-element"]}>
-          <img src={logo} />
+          <img src={logo} alt="websiteicon" />
           <h3>PAWS</h3>
           <div>
             <span>
