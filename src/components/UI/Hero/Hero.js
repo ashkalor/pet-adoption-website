@@ -4,10 +4,10 @@ const Hero = (props) => {
   const { title, hero, cover, content, page } = props;
   console.log(cover);
   return (
-    <div className="relative h-screen  flex justify-center">
+    <div className="relative h-screen w-full flex justify-center">
       {cover && (
         <div
-          className="static w-full h-screen  bg-no-repeat bg-cover bg-fixed"
+          className="scroll w-screen h-screen bg-center bg-no-repeat bg-cover bg-fixed"
           style={{
             backgroundImage: `url(${cover})`,
           }}
@@ -19,18 +19,29 @@ const Hero = (props) => {
         <div className="absolute h-auto w-full bg-black bg-opacity-75 "></div>
       )}
       {title && (
-        <div className="absolute top-48 font-semibold text-white text-7xl">
+        <div
+          className="absolute mx-auto font-semibold text-white text-7xl"
+          style={{ bottom: "70vh" }}
+        >
           {title}
         </div>
       )}
       {content && (
-        <div className="absolute top-72 font-medium text-white text-xl">
+        <div
+          className="absolute font-medium text-white text-xl"
+          style={{ bottom: "65vh" }}
+        >
           {content}
         </div>
       )}
       {hero && (
-        <div className="absolute bottom-0">
-          <img src={hero} alt="Hero" className="object-center object-cover" />
+        <div className="absolute mx-auto " style={{ bottom: "0" }}>
+          <img
+            src={hero}
+            alt="Hero"
+            className="object-center object-cover"
+            style={{ height: "50vh", width: "70vw" }}
+          />
         </div>
       )}
 
