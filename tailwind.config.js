@@ -20,6 +20,8 @@ module.exports = {
       borderWidth: ["active"],
       borderColor: ["active"],
       borderRadius: ["active"],
+      transform: ["hover"],
+      rotate: ["hover"],
     },
   },
   plugins: [],
