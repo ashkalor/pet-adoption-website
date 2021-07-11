@@ -14,16 +14,16 @@ function App() {
           <Home />
         </Route>
         <Route path="/about" exact>
-          <Redirect to="/home" />
+          <Redirect to="/about" />
         </Route>
         <Route path="/adopt" exact>
-          <Redirect to="/home" />
+          <Redirect to="/adopt" />
         </Route>
         <Route path="/shelter" exact>
-          <Redirect to="/home" />
+          <Redirect to="/shelter" />
         </Route>
         <Route path="/donate" exact>
-          <Redirect to="/home" />
+          <Redirect to="/donate" />
         </Route>
         <Route path="*" exact>
           <Redirect to="/home" />

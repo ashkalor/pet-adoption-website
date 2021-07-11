@@ -6,6 +6,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
+  @apply font-monsterrat;
 }
 
 .logo {
@@ -41,5 +42,7 @@
 .nav a:hover,
 .nav a:active,
 .nav a.active {
-  color: #e6fcfc;
+  @apply border-b-4 border-purple-700;
+  @apply font-monsterrat;
+  @apply active:border-b-4 border-purple-700;
 }

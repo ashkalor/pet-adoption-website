@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  @apply font-monsterrat;
   margin: 0;
   background-color: #efeded;
 }

@@ -29,11 +29,7 @@ const Footer = () => {
 
         <div className={classes["footer-element"]}>
           <h3>
-            <Link
-              to="/home"
-              activeClassName={classes.active}
-              className="font-medium"
-            >
+            <Link to="/home" className="font-medium">
               Contact Us
             </Link>
           </h3>
@@ -52,11 +48,7 @@ const Footer = () => {
         </div>
         <div className={classes["footer-element"]}>
           <h3>
-            <Link
-              to="/about"
-              activeClassName={classes.active}
-              className="font-medium"
-            >
+            <Link to="/about" className="font-medium">
               About Us
             </Link>
           </h3>

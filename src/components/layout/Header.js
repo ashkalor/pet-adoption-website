@@ -4,7 +4,7 @@ import logo from "../../assets/img/header/logo.png";
 
 const Header = () => {
   return (
-    <header className={classes.header}>
+    <header className={`${classes.header} fixed z-10`}>
       <div className={classes.logo}>
         <img src={logo} alt="Logo" />
         <div>PAWS</div>
@@ -12,7 +12,7 @@ const Header = () => {
       <nav className={classes.nav}>
         <ul>
           <li>
-            <NavLink to="/home" activeClassName={classes.active}>
+            <NavLink to="/home" activeClassName={`${classes.active} `}>
               Home
             </NavLink>
           </li>
