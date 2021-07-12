@@ -37,7 +37,7 @@ const Footer = () => {
             <span>
               <FaPhoneAlt />
             </span>
-            <span>+91-9980785789</span>
+            <span>+91-1234567890</span>
           </div>
           <div className="flex items-center">
             <span>
