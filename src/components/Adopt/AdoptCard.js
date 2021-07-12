@@ -1,5 +1,5 @@
 import Button from "../UI/Button/Button";
-import "./Card.css";
+import "./AdoptCard.css";
 
 const Card = ({image,name,gender,age,breed}) => {
     return(
