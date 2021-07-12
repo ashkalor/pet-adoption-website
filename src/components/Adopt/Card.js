@@ -13,6 +13,7 @@ const Card = ({image,name,gender,age,breed}) => {
                 <p className="line"><strong>GENDER: </strong>{gender}</p>
                 <p className="line"><strong>AGE: </strong>{age}</p>
                 <p className="line"><strong>BREED: </strong>{breed}</p>
+                
                 <Button className="h-10">MORE INFO</Button>
             </div>
         </div>
