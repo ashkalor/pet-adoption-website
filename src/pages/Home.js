@@ -16,7 +16,6 @@ const Home = () => {
       />
       <HomeAbout />
       <EventPanel />
-      <StoriesPanel />
     </>
   );
 };
