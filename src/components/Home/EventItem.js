@@ -1,12 +1,9 @@
 import Button from "../UI/Button/Button";
 import { MdLocationOn } from "react-icons/md";
 import { AiFillCalendar } from "react-icons/ai";
-import { useState } from "react";
 
 const EventItem = (props) => {
   const { eventCardImg, eventTitle, eventDate, eventLocation } = props;
-  const { current, setCurrent } = useState(0);
-  const length = 3;
 
   return (
     <div className="flex-col inline-flex items-center rounded-lg my-3 mx-3 bg-gray-200">

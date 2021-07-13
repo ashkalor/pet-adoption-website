@@ -1,16 +1,24 @@
 import Card from "../UI/Card/Card";
 import Button from "../UI/Button/Button";
 import eventImg from "../../assets/img/home/events-panel.jpg";
-import eventCard1 from "../../assets/img/home/eventcard1.jpg";
-import eventCard2 from "../../assets/img/home/eventcard2.jpg";
-import eventCard3 from "../../assets/img/home/eventcard3.jpg";
 import EventItem from "./EventItem";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 import { useState } from "react";
+import { EventData } from "./EventData";
 
 const EventPanel = (props) => {
-  const { current, setCurrent } = useState(0);
-  const length = 3;
+  const [paneOne, setPaneOne] = useState(0);
+  const [paneTwo, setPaneTwo] = useState(1);
+  const length = 2;
+  const prevEvent = () => {
+    setPaneOne((prevPane) => (prevPane === length ? 0 : prevPane + 1));
+    setPaneTwo((prevPane) => (prevPane === length ? 0 : prevPane + 1));
+  };
+
+  const nextEvent = () => {
+    setPaneTwo((prevPane) => (prevPane === 0 ? length : prevPane - 1));
+    setPaneOne((prevPane) => (prevPane === 0 ? length : prevPane - 1));
+  };
 
   return (
     <Card
@@ -34,30 +42,47 @@ const EventPanel = (props) => {
           src={eventImg}
           alt="Events"
           className="border-8 ml-14 border-gray-300 -rotate-6 transition-transform duration-500 transform-gpu hover:rotate-0 hover:scale-110  "
-          style={{ "border-width": "12px" }}
+          style={{ borderWidth: "12px" }}
         />
       </div>
-      <div className="relative flex flex-row row-span-1 col-span-2">
-        <GrFormPrevious size="2rem" />
-        <GrFormNext size="2rem" />
-        <EventItem
-          eventCardImg={eventCard1}
-          eventTitle="NYC Adoption Fair"
-          eventDate="2th August at 4pm"
-          eventLocation="Washington square park"
+      <div className="relative flex flex-row   items-center justify-start row-span-1 col-span-2">
+        <GrFormPrevious
+          className="absolute select-none cursor-pointer"
+          style={{ top: "50%", left: "-1.4rem" }}
+          size="2rem"
+          onClick={prevEvent}
         />
-        <EventItem
-          eventCardImg={eventCard2}
-          eventTitle="Bronx Adoption Fair"
-          eventDate="5th September at 4pm"
-          eventLocation="Bronx park"
+        <GrFormNext
+          className="absolute select-none cursor-pointer"
+          style={{ top: "50%", right: "41rem" }}
+          size="2rem"
+          onClick={nextEvent}
         />
-        <EventItem
-          eventCardImg={eventCard3}
-          eventTitle="Jersey Adoption Fair"
-          eventDate="6th October at 4pm"
-          eventLocation="Jersey park"
-        />
+        {EventData.map((slide, index) => {
+          return (
+            <div
+              className={index === paneOne || index === paneTwo ? "" : ""}
+              key={index}
+            >
+              {index === paneOne && (
+                <EventItem
+                  eventCardImg={slide.img}
+                  eventTitle={slide.title}
+                  eventDate={slide.date}
+                  eventLocation={slide.location}
+                />
+              )}
+              {index === paneTwo && (
+                <EventItem
+                  eventCardImg={slide.img}
+                  eventTitle={slide.title}
+                  eventDate={slide.date}
+                  eventLocation={slide.location}
+                />
+              )}
+            </div>
+          );
+        })}
       </div>
     </Card>
   );
