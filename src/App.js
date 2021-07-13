@@ -2,7 +2,7 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import "./index.css";
 import Home from "./pages/Home";
-import Adopt from "./pages/Adopt"
+import Adopt from "./pages/Adopt";
 
 function App() {
   return (
@@ -18,8 +18,7 @@ function App() {
           <Redirect to="/about" />
         </Route>
         <Route path="/adopt" exact>
-          {/* <Redirect to="/adopt" /> */}
-           <Adopt /> 
+          <Adopt />
         </Route>
         <Route path="/shelter" exact>
           <Redirect to="/shelter" />

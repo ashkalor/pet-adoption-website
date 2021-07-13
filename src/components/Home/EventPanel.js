@@ -5,44 +5,12 @@ import eventCard1 from "../../assets/img/home/eventcard1.jpg";
 import eventCard2 from "../../assets/img/home/eventcard2.jpg";
 import eventCard3 from "../../assets/img/home/eventcard3.jpg";
 import EventItem from "./EventItem";
-import Slider from "react-slick";
-import "../../../node_modules/slick-carousel/slick/slick.css";
-import "../../../node_modules/slick-carousel/slick/slick-theme.css";
-import { GrFormNext } from "react-icons/gr";
-import { GrFormPrevious } from "react-icons/gr";
+import { GrFormNext, GrFormPrevious } from "react-icons/gr";
+import { useState } from "react";
 
 const EventPanel = (props) => {
-  function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "red" }}
-        onClick={onClick}
-      />
-    );
-  }
-
-  function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "green" }}
-        onClick={onClick}
-      />
-    );
-  }
-
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-  };
+  const { current, setCurrent } = useState(0);
+  const length = 3;
 
   return (
     <Card
@@ -69,27 +37,27 @@ const EventPanel = (props) => {
           style={{ "border-width": "12px" }}
         />
       </div>
-      <div className="flex flex-col row-span-1 col-span-1">
-        <Slider {...settings}>
-          <EventItem
-            eventCardImg={eventCard1}
-            eventTitle="NYC Adoption Fair"
-            eventDate="2th August at 4pm"
-            eventLocation="Washington square park"
-          />
-          <EventItem
-            eventCardImg={eventCard2}
-            eventTitle="Bronx Adoption Fair"
-            eventDate="5th September at 4pm"
-            eventLocation="Bronx park"
-          />
-          <EventItem
-            eventCardImg={eventCard3}
-            eventTitle="Jersey Adoption Fair"
-            eventDate="6th October at 4pm"
-            eventLocation="Jersey park"
-          />
-        </Slider>
+      <div className="relative flex flex-row row-span-1 col-span-2">
+        <GrFormPrevious size="2rem" />
+        <GrFormNext size="2rem" />
+        <EventItem
+          eventCardImg={eventCard1}
+          eventTitle="NYC Adoption Fair"
+          eventDate="2th August at 4pm"
+          eventLocation="Washington square park"
+        />
+        <EventItem
+          eventCardImg={eventCard2}
+          eventTitle="Bronx Adoption Fair"
+          eventDate="5th September at 4pm"
+          eventLocation="Bronx park"
+        />
+        <EventItem
+          eventCardImg={eventCard3}
+          eventTitle="Jersey Adoption Fair"
+          eventDate="6th October at 4pm"
+          eventLocation="Jersey park"
+        />
       </div>
     </Card>
   );
