@@ -2,24 +2,10 @@ import Card from "../UI/Card/Card";
 import Button from "../UI/Button/Button";
 import eventImg from "../../assets/img/home/events-panel.jpg";
 import EventItem from "./EventItem";
-import { GrFormNext, GrFormPrevious } from "react-icons/gr";
-import { useState } from "react";
 import { EventData } from "./EventData";
+import Carousel from "../UI/Carousel/Carousel";
 
 const EventPanel = (props) => {
-  const [paneOne, setPaneOne] = useState(0);
-  const [paneTwo, setPaneTwo] = useState(1);
-  const length = 2;
-  const prevEvent = () => {
-    setPaneOne((prevPane) => (prevPane === length ? 0 : prevPane + 1));
-    setPaneTwo((prevPane) => (prevPane === length ? 0 : prevPane + 1));
-  };
-
-  const nextEvent = () => {
-    setPaneTwo((prevPane) => (prevPane === 0 ? length : prevPane - 1));
-    setPaneOne((prevPane) => (prevPane === 0 ? length : prevPane - 1));
-  };
-
   return (
     <Card
       className={`${props.className} grid grid-cols-2 grid-rows-2 p-14 my-10 `}
@@ -45,45 +31,25 @@ const EventPanel = (props) => {
           style={{ borderWidth: "12px" }}
         />
       </div>
-      <div className="relative flex flex-row   items-center justify-start row-span-1 col-span-2">
-        <GrFormPrevious
-          className="absolute select-none cursor-pointer"
-          style={{ top: "50%", left: "-1.4rem" }}
-          size="2rem"
-          onClick={prevEvent}
-        />
-        <GrFormNext
-          className="absolute select-none cursor-pointer"
-          style={{ top: "50%", right: "41rem" }}
-          size="2rem"
-          onClick={nextEvent}
-        />
-        {EventData.map((slide, index) => {
+      <Carousel
+        className=""
+        length={EventData.length}
+        show={2}
+        infiniteLoop={false}
+        style={{ width: "35rem" }}
+      >
+        {EventData.map((item) => {
           return (
-            <div
-              className={index === paneOne || index === paneTwo ? "" : ""}
-              key={index}
-            >
-              {index === paneOne && (
-                <EventItem
-                  eventCardImg={slide.img}
-                  eventTitle={slide.title}
-                  eventDate={slide.date}
-                  eventLocation={slide.location}
-                />
-              )}
-              {index === paneTwo && (
-                <EventItem
-                  eventCardImg={slide.img}
-                  eventTitle={slide.title}
-                  eventDate={slide.date}
-                  eventLocation={slide.location}
-                />
-              )}
-            </div>
+            <EventItem
+              className="px-3"
+              eventCardImg={item.img}
+              eventTitle={item.title}
+              eventDate={item.date}
+              eventLocation={item.location}
+            />
           );
         })}
-      </div>
+      </Carousel>
     </Card>
   );
 };
