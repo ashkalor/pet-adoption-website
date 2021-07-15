@@ -27,7 +27,7 @@ const EventPanel = (props) => {
         <img
           src={eventImg}
           alt="Events"
-          className="border-8 ml-14 border-gray-300 -rotate-6 transition-transform duration-500 transform-gpu hover:rotate-0 hover:scale-110  "
+          className="border-8 ml-14 border-gray-300 -rotate-6 transition-transform duration-500 transform-gpu hover:rotate-0"
           style={{ borderWidth: "12px" }}
         />
       </div>
