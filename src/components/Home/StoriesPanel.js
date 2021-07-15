@@ -1,6 +1,6 @@
 import Card from "../UI/Card/Card";
 import Button from "../UI/Button/Button";
-import storiesImg from "../../assets/img/home/events-panel.jpg";
+import storiesImg from "../../assets/img/home/stories-panel.jpg";
 
 const StoriesPanel = (props) => {
   return (
@@ -18,7 +18,6 @@ const StoriesPanel = (props) => {
           quasi dolore nulla?
         </p>
         <Button className="font-medium">SEE ALL STORIES</Button>
-        <p className="mt-6 font-medium text-xl">Upcoming Events : </p>
       </div>
       <div className="col-span-1 row-span-3 mt-3 mx-14 ">
         <img
