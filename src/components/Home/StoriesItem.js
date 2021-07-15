@@ -1,9 +1,15 @@
+import quoteImg from "../../assets/img/home/quote-left.png";
 const StoriesItem = (props) => {
   const { storyQuote, storyAuthor, storyImg, className } = props;
   return (
     <div
-      className={`${className} flex flex-col gap-5 justify-center rounded-xl items-center mt-10  bg-gray-200`}
+      className={`${className} relative flex flex-col gap-5 justify-center rounded-3xl  items-center mt-10  bg-gray-100`}
     >
+      <img
+        src={quoteImg}
+        alt="quote"
+        className="absolute w-20 top-10 opacity-10 left-10  "
+      />
       <div className="text-xl font-medium px-20 my-5 text-center">
         {storyQuote}
       </div>
