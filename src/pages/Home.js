@@ -1,6 +1,7 @@
 import Hero from "../components/UI/Hero/Hero";
 import hero from "../../src/assets/img/home/hero.png";
 import heroCover from "../assets/img/home/hero-cover.jpg";
+import contentCover from "../assets/img/home/content-cover.jpg";
 import HomeAbout from "../components/Home/HomeAbout";
 import EventPanel from "../components/Home/EventPanel";
 import StoriesPanel from "../components/Home/StoriesPanel";
@@ -15,8 +16,15 @@ const Home = () => {
         content="The one stop for all your pet adoption needs"
       />
       <HomeAbout />
-      <EventPanel />
-      <StoriesPanel />
+      <div
+        className=" w-screen bg-center bg-no-repeat bg-cover bg-fixed"
+        style={{
+          backgroundImage: `url(${contentCover})`,
+        }}
+      >
+        <EventPanel />
+        <StoriesPanel />
+      </div>
     </>
   );
 };
