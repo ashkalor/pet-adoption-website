@@ -6,7 +6,7 @@ const Card = (props) => {
   return (
     <div
       className={`${classes.card} ${props.className}`}
-      style={{ margin: "3rem 10%" }}
+      style={{ marginLeft: "10%", marginRight: "10%" }}
     >
       {props.children}
     </div>

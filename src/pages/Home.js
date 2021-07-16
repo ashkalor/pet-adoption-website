@@ -17,7 +17,7 @@ const Home = () => {
       />
       <HomeAbout />
       <div
-        className=" w-screen bg-center bg-no-repeat bg-cover bg-fixed"
+        className="w-screen z-3 bg-center bg-no-repeat bg-cover bg-fixed py-10"
         style={{
           backgroundImage: `url(${contentCover})`,
         }}

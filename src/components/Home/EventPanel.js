@@ -8,7 +8,7 @@ import Carousel from "../UI/Carousel/Carousel";
 const EventPanel = (props) => {
   return (
     <Card
-      className={`${props.className} grid grid-cols-2 grid-rows-2 p-14 my-10 `}
+      className={`${props.className} grid grid-cols-2 grid-rows-2 p-14 mb-10 `}
     >
       <div className="row-span-1 col-span-1">
         <div className="font-bold text-3xl py-3 border-b-2 border-gray-300 inline-block">
@@ -32,7 +32,7 @@ const EventPanel = (props) => {
         />
       </div>
       <Carousel
-        className=""
+        className="mt-8"
         length={EventData.length}
         show={2}
         infiniteLoop={false}
