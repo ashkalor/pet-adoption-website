@@ -4,7 +4,7 @@ const Hero = (props) => {
   const { title, hero, cover, content, page } = props;
   console.log(cover);
   return (
-    <div className="relative h-screen w-full flex justify-center">
+    <div className="relative -mt-20 h-screen w-full flex justify-center">
       {cover && (
         <div
           className="scroll w-screen h-screen bg-center bg-no-repeat bg-cover bg-fixed"

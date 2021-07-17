@@ -1,4 +1,3 @@
-import Hero from "../components/UI/Hero/Hero";
 import heroAdopt from "../assets/img/adopt/hero-adopt.jpg";
 import AdoptAbout from "../components/Adopt/AdoptAbout";
 import AdoptCard from "../components/Adopt/AdoptCard";
@@ -9,11 +8,12 @@ import leelo from "../assets/img/adopt/leelo.png";
 import mylo from "../assets/img/adopt/mylo.jpg";
 import river from "../assets/img/adopt/river.JPG";
 import Card from "../components/UI/Card/Card";
+import HeroSmall from "../components/UI/Hero/HeroSmall";
 
 const Adopt = () => {
   return (
     <>
-      <Hero title="Adoption" cover={heroAdopt} page="Adopt" />
+      <HeroSmall title="Adoption" heroImg={heroAdopt} page="Adopt" />
       <AdoptAbout />
       <Filter />
       <Card className="pt-1">

@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     fontFamily: {
       monsterrat: ["Montserrat"],
+      roboto: ["Roboto", "sans-serif"],
     },
     extend: {
       backgroundImage: (theme) => ({

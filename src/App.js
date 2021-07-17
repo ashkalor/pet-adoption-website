@@ -3,6 +3,7 @@ import Layout from "./components/layout/Layout";
 import "./index.css";
 import Home from "./pages/Home";
 import Adopt from "./pages/Adopt";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -14,9 +15,6 @@ function App() {
         <Route path="/home" exact>
           <Home />
         </Route>
-        <Route path="/about" exact>
-          <Redirect to="/about" />
-        </Route>
         <Route path="/adopt" exact>
           <Adopt />
         </Route>
@@ -25,6 +23,9 @@ function App() {
         </Route>
         <Route path="/donate" exact>
           <Redirect to="/donate" />
+        </Route>
+        <Route path="/contact" exact>
+          <Contact />
         </Route>
         <Route path="*" exact>
           <Redirect to="/home" />
