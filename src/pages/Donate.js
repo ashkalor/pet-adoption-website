@@ -1,11 +1,11 @@
 import HeroSmall from "../components/UI/Hero/HeroSmall";
 import contactCover from "../assets/img/contact/contactCover.jpg";
-const Contact = () => {
+const Donate = () => {
   return (
     <>
-      <HeroSmall title="Contact" heroImg={contactCover} />
+      <HeroSmall title="Donate" heroImg={contactCover} />
     </>
   );
 };
 
-export default Contact;
+export default Donate;

@@ -4,6 +4,8 @@ import "./index.css";
 import Home from "./pages/Home";
 import Adopt from "./pages/Adopt";
 import Contact from "./pages/Contact";
+import Shelter from "./pages/Shelter";
+import Donate from "./pages/Donate";
 
 function App() {
   return (
@@ -19,10 +21,10 @@ function App() {
           <Adopt />
         </Route>
         <Route path="/shelter" exact>
-          <Redirect to="/shelter" />
+          <Shelter />
         </Route>
         <Route path="/donate" exact>
-          <Redirect to="/donate" />
+          <Donate />
         </Route>
         <Route path="/contact" exact>
           <Contact />

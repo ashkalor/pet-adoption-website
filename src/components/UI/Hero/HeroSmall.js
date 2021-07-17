@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { HiOutlineChevronRight } from "react-icons/hi";
 
 const HeroSmall = (props) => {
-  const { heroImg, title, page } = props;
+  const { heroImg, title } = props;
   return (
     <diV className="relative w-screen h-96 bg-black">
       <img
@@ -36,10 +36,10 @@ const HeroSmall = (props) => {
         </div>
 
         <Link
-          to={`/${page}`}
+          to={`/${title}`}
           className=" text-md font-roboto font-light text-gray-300 hover:text-gray-400 "
         >
-          {page}
+          {title}
         </Link>
       </div>
     </diV>
