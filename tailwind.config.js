@@ -10,6 +10,7 @@ module.exports = {
       backgroundImage: (theme) => ({
         "hero-home": "url(/src/assets/img/home/hero.png)",
         "hero-background-home": "url(/src/assets/img/home/hero-cover.jpg)",
+        "bones-background": "url(/src/assets/img/contact/contactBg.jpg)",
         "-10": "-10",
       }),
     },

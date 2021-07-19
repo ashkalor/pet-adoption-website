@@ -5,7 +5,7 @@ import logo from "../../assets/img/header/logo.png";
 const Header = () => {
   return (
     <>
-      <header className={`${classes.header} fixed z-10`}>
+      <header className={`${classes.header} fixed z-20`}>
         <div className={`${classes.logo}`}>
           <img src={logo} alt="Logo" />
           <div>PAWS</div>

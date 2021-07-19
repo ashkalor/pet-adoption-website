@@ -4,7 +4,7 @@ import { HiOutlineChevronRight } from "react-icons/hi";
 const HeroSmall = (props) => {
   const { heroImg, title } = props;
   return (
-    <diV className="relative w-screen h-96 bg-black">
+    <div className="relative w-screen h-96 bg-black">
       <img
         src={heroImg}
         alt=""
@@ -42,7 +42,7 @@ const HeroSmall = (props) => {
           {title}
         </Link>
       </div>
-    </diV>
+    </div>
   );
 };
 export default HeroSmall;
