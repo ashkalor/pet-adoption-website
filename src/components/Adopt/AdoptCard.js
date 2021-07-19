@@ -1,7 +1,7 @@
 import Button from "../UI/Button/Button";
 import "./AdoptCard.css";
 
-const Card = ({ image, name, gender, age, breed }) => {
+const AdoptCard = ({ image, name, gender, age, breed }) => {
   return (
     <div className="card mb-10">
       <div className="outerImage">
@@ -37,4 +37,4 @@ const Card = ({ image, name, gender, age, breed }) => {
     </div>
   );
 };
-export default Card;
+export default AdoptCard;
