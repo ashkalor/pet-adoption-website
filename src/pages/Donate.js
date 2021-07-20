@@ -3,8 +3,34 @@ import contactCover from "../assets/img/contact/contactCover.jpg";
 import Card from "../components/UI/Card/Card";
 import { CharityList } from "../components/donate/CharityList";
 import Button from "../components/UI/Button/Button";
+import { useEffect, useState } from "react";
 
 const Donate = () => {
+  const [currentPage, setCurrentPage] = useState(0);
+  const [itemsPerPage, setItemsPerPage] = useState(3);
+  const [totalPages, setTotalPages] = useState(0);
+  const [isNextDisabled, setIsNextDisabled] = useState(false);
+  const [isPrevDisabled, setIsPrevDisabled] = useState(false);
+
+  useEffect(() => {
+    setTotalPages(CharityList.length / itemsPerPage);
+  }, [itemsPerPage, CharityList]);
+
+  const nextHandler = (event) => {
+    if (currentPage < totalPages) {
+      setCurrentPage((prevCurrentPage) => prevCurrentPage + 1);
+    } else {
+      setIsNextDisabled(true);
+    }
+  };
+  const prevHandler = (event) => {
+    if (currentPage > 0) {
+      setCurrentPage((prevCurrentPage) => prevCurrentPage - 1);
+    } else {
+      setIsPrevDisabled(true);
+    }
+  };
+
   return (
     <>
       <HeroSmall title="Donate" heroImg={contactCover} />
@@ -31,6 +57,10 @@ const Donate = () => {
                   </div>
                 );
               })}
+            </div>
+            <div className="flex gap-4 justify-end -mt-8">
+              <Button onClick={nextHandler}>Back</Button>
+              <Button onClick={prevHandler}>Next</Button>
             </div>
           </div>
         </Card>
