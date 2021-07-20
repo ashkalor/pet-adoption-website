@@ -9,27 +9,29 @@ const Donate = () => {
     <>
       <HeroSmall title="Donate" heroImg={contactCover} />
       <div>
-        <Card className="p-12">
-          <div className="text-4xl font-semibold ">Pet Charity Links</div>
-          <div>
-            {CharityList.map((item) => {
-              return (
-                <div className="flex items-center">
-                  <div className="overflow-hidden h-36 w-36 ">
-                    <img
-                      src={item.logo}
-                      alt="Charity Logo"
-                      className=" object-cover object-top h-36 w-36 rounded-full"
-                    />
+        <Card>
+          <div style={{ margin: "3rem 0", padding: "3rem 10%" }}>
+            <div className="text-4xl font-semibold ">Pet Charity Links</div>
+            <div>
+              {CharityList.map((item) => {
+                return (
+                  <div className="flex items-center p-8 bg-gray-300 my-16 rounded-xl gap-12">
+                    <div className="overflow-hidden h-36 w-36 ">
+                      <img
+                        src={item.logo}
+                        alt="Charity Logo"
+                        className=" object-cover object-top h-36 w-36 rounded-full"
+                      />
+                    </div>
+                    <div>
+                      <p className="text-2xl font-medium">{item.title}</p>
+                      <p>{item.url}</p>
+                      <Button className="">Donate</Button>
+                    </div>
                   </div>
-                  <div>
-                    <p>{item.title}</p>
-                    <p>{item.url}</p>
-                    <Button>Donate</Button>
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </Card>
       </div>
