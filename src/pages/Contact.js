@@ -8,7 +8,7 @@ const Contact = () => {
   return (
     <>
       <HeroSmall title="Contact" heroImg={contactCover} />
-      <div className="w-screen h-full bg-no-repeat py-10 bg-cover">
+      <div className="w-screen h-full  bg-bones-background bg-fixed bg-no-repeat py-10 bg-cover">
         <Card className="pt-8 mt-10">
           <div style={{ margin: "3rem 10%" }}>
             <div className="font-semibold text-4xl text-black">
