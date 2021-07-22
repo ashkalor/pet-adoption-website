@@ -46,6 +46,7 @@ const EventPanel = (props) => {
               eventTitle={item.title}
               eventDate={item.date}
               eventLocation={item.location}
+              key={item.id}
             />
           );
         })}

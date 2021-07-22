@@ -4,6 +4,7 @@ import Card from "../components/UI/Card/Card";
 import { CharityList } from "../components/donate/CharityList";
 import Button from "../components/UI/Button/Button";
 import { useEffect, useState } from "react";
+import CharityItem from "../components/donate/CharityItem";
 
 const Donate = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -13,11 +14,10 @@ const Donate = () => {
   const [isPrevDisabled, setIsPrevDisabled] = useState(false);
 
   useEffect(() => {
-    setTotalPages(CharityList.length / itemsPerPage);
+    setTotalPages(Math.round(CharityList.length / itemsPerPage + 1));
     if (currentPage === totalPages) {
       setIsNextDisabled(true);
     }
-
     if (currentPage === 1) setIsPrevDisabled(true);
   }, [itemsPerPage, currentPage, totalPages]);
 
@@ -47,20 +47,13 @@ const Donate = () => {
                 currentPage * itemsPerPage
               ).map((item) => {
                 return (
-                  <div className="flex items-center p-8 bg-gray-300 my-16 rounded-xl gap-12">
-                    <div className="overflow-hidden h-36 w-36 ">
-                      <img
-                        src={item.logo}
-                        alt="Charity Logo"
-                        className=" object-cover object-top h-36 w-36 rounded-full"
-                      />
-                    </div>
-                    <div>
-                      <p className="text-2xl font-medium">{item.title}</p>
-                      <p>{item.url}</p>
-                      <Button className="">Donate</Button>
-                    </div>
-                  </div>
+                  <CharityItem
+                    key={item.id}
+                    logo={item.logo}
+                    title={item.title}
+                    url={item.url}
+                    donateLink={item.donateLink}
+                  />
                 );
               })}
             </div>

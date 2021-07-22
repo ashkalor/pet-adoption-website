@@ -34,6 +34,7 @@ const StoriesPanel = (props) => {
                 storyQuote={item.storyQuote}
                 storyImg={item.storyImg}
                 storyName={item.storyName}
+                key={item.id}
               />
             );
           })}
@@ -44,7 +45,7 @@ const StoriesPanel = (props) => {
           src={storiesImg}
           alt="Events"
           className="border-8 ml-14 border-gray-300 -rotate-6 transition-transform duration-500 transform-gpu hover:rotate-0"
-          style={{ "border-width": "12px" }}
+          style={{ borderWidth: "12px" }}
         />
       </div>
     </Card>

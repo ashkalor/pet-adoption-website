@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 
 const Hero = (props) => {
   const { title, hero, cover, content, page } = props;
-  console.log(cover);
   return (
     <div className="relative -mt-20 h-screen w-full flex justify-center">
       {cover && (
