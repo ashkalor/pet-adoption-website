@@ -1,6 +1,10 @@
 import logo1 from "../../assets/img/donate/logo1.jpg";
 import logo2 from "../../assets/img/donate/logo2.jpg";
 import logo3 from "../../assets/img/donate/logo3.jpg";
+import logo4 from "../../assets/img/donate/logo4.jpg";
+import logo5 from "../../assets/img/donate/logo5.jpg";
+import logo6 from "../../assets/img/donate/logo6.jpg";
+import logo7 from "../../assets/img/donate/logo7.jpg";
 
 export const CharityList = [
   {
