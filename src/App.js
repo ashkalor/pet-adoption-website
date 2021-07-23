@@ -29,6 +29,9 @@ function App() {
         <Route path="/contact" exact>
           <Contact />
         </Route>
+        <Route path="/donate/search-by-district" exact>
+          <Contact />
+        </Route>
         <Route path="*" exact>
           <Redirect to="/home" />
         </Route>
