@@ -12,7 +12,7 @@ const Shelter = () => {
           Find Shelter Homes
         </div>
         <nav className="flex items-start justify-center">
-          <ul className="h-12 m-12 py-6 gap-x-3 flex  justify-center items-center rounded-3xl bg-gray-300">
+          <ul className="h-12  m-12 py-6 gap-x-3 flex  justify-center items-center rounded-3xl bg-gray-300">
             <li>
               <NavLink
                 to="/donate/search-by-pin"
@@ -33,11 +33,11 @@ const Shelter = () => {
             </li>
             <li>
               <NavLink
-                to="/donate/search-by-state"
+                to="/donate/search-by-name"
                 activeClassName=" bg-purple-700 text-white"
-                className="py-3.5 px-7 rounded-3xl text-black"
+                className="py-3.5  px-7 rounded-3xl text-black"
               >
-                Search by State
+                Search by Name
               </NavLink>
             </li>
           </ul>

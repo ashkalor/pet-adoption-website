@@ -35,7 +35,7 @@ function App() {
         <Route path="/donate/search-by-pin" exact>
           <Shelter />
         </Route>
-        <Route path="/donate/search-by-state" exact>
+        <Route path="/donate/search-by-name" exact>
           <Shelter />
         </Route>
         <Route path="*" exact>
