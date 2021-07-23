@@ -30,7 +30,13 @@ function App() {
           <Contact />
         </Route>
         <Route path="/donate/search-by-district" exact>
-          <Contact />
+          <Shelter />
+        </Route>
+        <Route path="/donate/search-by-pin" exact>
+          <Shelter />
+        </Route>
+        <Route path="/donate/search-by-state" exact>
+          <Shelter />
         </Route>
         <Route path="*" exact>
           <Redirect to="/home" />

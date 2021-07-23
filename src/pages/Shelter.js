@@ -8,13 +8,16 @@ const Shelter = () => {
     <>
       <HeroSmall title="Shelter" heroImg={contactCover} />
       <Card className="my-12 py-12">
-        <div className="text-5xl text-center">Find Shelter Homes</div>
+        <div className="text-5xl text-center font-semibold">
+          Find Shelter Homes
+        </div>
         <nav className="flex items-start justify-center">
-          <ul className="h-12 w-1/2 m-12 p-6 gap-x-6 flex justify-center items-center rounded-3xl bg-gray-300">
+          <ul className="h-12 m-12 py-6 gap-x-3 flex  justify-center items-center rounded-3xl bg-gray-300">
             <li>
               <NavLink
                 to="/donate/search-by-pin"
-                activeClassName="bg-purple-700"
+                activeClassName=" bg-purple-700 text-white"
+                className="py-3.5 px-7 rounded-3xl text-black"
               >
                 Search by PIN
               </NavLink>
@@ -22,7 +25,8 @@ const Shelter = () => {
             <li>
               <NavLink
                 to="/donate/search-by-district"
-                activeClassName="bg-purple-700"
+                activeClassName=" bg-purple-700 text-white"
+                className="py-3.5 px-7 rounded-3xl text-black"
               >
                 Search by District
               </NavLink>
@@ -30,7 +34,8 @@ const Shelter = () => {
             <li>
               <NavLink
                 to="/donate/search-by-state"
-                activeClassName="bg-purple-700"
+                activeClassName=" bg-purple-700 text-white"
+                className="py-3.5 px-7 rounded-3xl text-black"
               >
                 Search by State
               </NavLink>
