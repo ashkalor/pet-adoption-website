@@ -14,7 +14,7 @@ const Donate = () => {
   const [isPrevDisabled, setIsPrevDisabled] = useState(false);
 
   useEffect(() => {
-    setTotalPages(Math.round(CharityList.length / itemsPerPage + 1));
+    setTotalPages(Math.round(CharityList.length / itemsPerPage));
     if (currentPage === totalPages) {
       setIsNextDisabled(true);
     }
