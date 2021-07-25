@@ -15,7 +15,9 @@ const CharityItem = (props) => {
       </div>
       <div>
         <p className="text-2xl font-medium">{title}</p>
-        <p>{url}</p>
+        <a href={url} className="block" target="_blank">
+          {url}
+        </a>
         <Link to={donateLink}>
           <Button className="">Donate</Button>
         </Link>
