@@ -3,53 +3,80 @@ import AdoptAbout from "../components/Adopt/AdoptAbout";
 import AdoptCard from "../components/Adopt/AdoptCard";
 import Filter from "../components/Adopt/Filter";
 import "../components/Adopt/AdoptCard.css";
-import simba from "../assets/img/adopt/simba.jpg";
-import leelo from "../assets/img/adopt/leelo.png";
-import mylo from "../assets/img/adopt/mylo.jpg";
-import river from "../assets/img/adopt/river.JPG";
 import Card from "../components/UI/Card/Card";
 import HeroSmall from "../components/UI/Hero/HeroSmall";
+import { useState, useEffect } from "react";
+import { AdoptData } from "../components/Adopt/AdoptData";
+import Button from "../components/UI/Button/Button";
 
 const Adopt = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 4;
+  const [totalPages, setTotalPages] = useState(0);
+  const [isNextDisabled, setIsNextDisabled] = useState(false);
+  const [isPrevDisabled, setIsPrevDisabled] = useState(false);
+
+  useEffect(() => {
+    setTotalPages(Math.round(AdoptData.length / itemsPerPage));
+    console.log(currentPage, totalPages);
+    if (currentPage === totalPages) {
+      setIsNextDisabled(true);
+    }
+    if (currentPage === 1) setIsPrevDisabled(true);
+  }, [itemsPerPage, currentPage, totalPages]);
+
+  const nextHandler = (event) => {
+    if (currentPage < totalPages) {
+      setIsPrevDisabled(false);
+      setCurrentPage((prevCurrentPage) => prevCurrentPage + 1);
+    }
+  };
+  const prevHandler = (event) => {
+    if (currentPage > 1) {
+      setIsNextDisabled(false);
+      setCurrentPage((prevCurrentPage) => prevCurrentPage - 1);
+    }
+  };
   return (
     <>
       <HeroSmall title="Adoption" heroImg={heroAdopt} page="Adopt" />
       <AdoptAbout />
       <Filter />
-      <Card className="pt-1">
-        <div className="allCards">
-          {/* <div className="cardRpw"> */}
-          <AdoptCard
-            image={simba}
-            name="SIMBA"
-            gender="Male"
-            age="10 months"
-            breed="Shih Tzu"
-          />
-          <AdoptCard
-            image={leelo}
-            name="LEELO"
-            gender="Male"
-            age="7 years"
-            breed="Mixed"
-          />
-          {/* </div> */}
-          {/* <div className="cardRow"> */}
-          <AdoptCard
-            image={mylo}
-            name="MYLO"
-            gender="Female"
-            age="6 months"
-            breed="Mixed"
-          />
-          <AdoptCard
-            image={river}
-            name="RIVER"
-            gender="Male"
-            age="1 year"
-            breed="Labrador"
-          />
-          {/* </div> */}
+      <Card>
+        <div style={{ margin: "3rem 0", padding: "3rem 10%" }}>
+          <div className="allCards">
+            {AdoptData.slice(
+              currentPage * itemsPerPage - itemsPerPage,
+              currentPage * itemsPerPage
+            ).map((item) => {
+              return (
+                <AdoptCard
+                  key={item.id}
+                  image={item.image}
+                  name={item.name}
+                  gender={item.gender}
+                  age={item.age}
+                  breed={item.breed}
+                />
+              );
+            })}
+          </div>
+          <div className="flex gap-4 justify-end -mt-8">
+            <Button
+              onClick={prevHandler}
+              disabled={isPrevDisabled}
+              className="disabled:opacity-20"
+            >
+              Back
+            </Button>
+            <Button
+              onClick={nextHandler}
+              disabled={isNextDisabled}
+              className="disabled:opacity-20"
+            >
+              Next
+            </Button>
+          </div>
         </div>
       </Card>
     </>

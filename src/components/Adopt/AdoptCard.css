@@ -1,50 +1,31 @@
-.allCards
-{
-    /* background-color: aquamarine; */
-    margin: 3rem 10%;
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: auto auto;
-
+.allCards {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: auto auto;
 }
-.card
-{
-    background-color: #b1a9a970;
-    height: 20rem;
-    border-radius: 25px;
-    display: flex;
-
+.card {
+  background-color: #b1a9a970;
+  height: 20rem;
+  border-radius: 25px;
+  display: flex;
+}
+.image {
+  margin: 20% 15%;
+  border-radius: 100px;
 }
 
-/* .outerImage
-{
-    overflow: hidden;
-    width: 10rem;
-    height: 10rem;    
-    border-radius: 100px;
-} */
-.image
-{
-    margin: 20% 15%;
-    border-radius: 100px;
+.image:hover {
+  transition: all 0.5s ease-in-out;
+  transform: scale(1.1);
 }
 
-.image:hover
-{
-    transition: all 0.5s ease-in-out;
-    transform:scale(1.1);
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 10% 20% 10% 10%;
 }
 
-.details
-{
-    /* background-color: brown; */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 10% 20% 10% 10%;
-}
-
-.line
-{
-    margin-bottom:5% ;
+.line {
+  margin-bottom: 5%;
 }
