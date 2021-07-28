@@ -3,12 +3,18 @@ import contactCover from "../assets/img/contact/contactCover.jpg";
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import Card from "../components/UI/Card/Card";
 import ContactForm from "../components/contact/ContactForm";
+import contentCover from "../assets/img/content-cover.jpg";
 
 const Contact = () => {
   return (
     <>
       <HeroSmall title="Contact" heroImg={contactCover} />
-      <div className="w-screen h-full  bg-bones-background bg-fixed bg-no-repeat py-10 bg-cover">
+      <div
+        className="w-screen z-3 bg-center bg-no-repeat bg-cover bg-fixed py-10"
+        style={{
+          backgroundImage: `url(${contentCover})`,
+        }}
+      >
         <Card className="pt-8 mt-10">
           <div style={{ margin: "3rem 10%" }}>
             <div className="font-semibold text-4xl text-black">
