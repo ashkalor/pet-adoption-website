@@ -5,6 +5,7 @@ import { CharityList } from "../components/donate/CharityList";
 import Button from "../components/UI/Button/Button";
 import { useEffect, useState } from "react";
 import CharityItem from "../components/donate/CharityItem";
+import contentCover from "../assets/img/content-cover.jpg";
 
 const Donate = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -37,9 +38,14 @@ const Donate = () => {
   return (
     <>
       <HeroSmall title="Donate" heroImg={contactCover} />
-      <div>
+      <div
+        className="w-screen z-3 bg-center bg-no-repeat bg-cover bg-fixed py-10"
+        style={{
+          backgroundImage: `url(${contentCover})`,
+        }}
+      >
         <Card>
-          <div style={{ margin: "3rem 0", padding: "3rem 10%" }}>
+          <div style={{ margin: "0 0", padding: "3rem 10%" }}>
             <div className="text-4xl font-semibold ">Pet Charity Links</div>
             <div>
               {CharityList.slice(

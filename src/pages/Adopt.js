@@ -8,6 +8,7 @@ import HeroSmall from "../components/UI/Hero/HeroSmall";
 import { useState, useEffect } from "react";
 import { AdoptData } from "../components/Adopt/AdoptData";
 import Button from "../components/UI/Button/Button";
+import contentCover from "../assets/img/content-cover.jpg";
 
 const Adopt = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -40,45 +41,52 @@ const Adopt = () => {
   return (
     <>
       <HeroSmall title="Adoption" heroImg={heroAdopt} page="Adopt" />
-      <AdoptAbout />
-      <Filter />
-      <Card>
-        <div style={{ margin: "3rem 0", padding: "3rem 10%" }}>
-          <div className="allCards">
-            {AdoptData.slice(
-              currentPage * itemsPerPage - itemsPerPage,
-              currentPage * itemsPerPage
-            ).map((item) => {
-              return (
-                <AdoptCard
-                  key={item.id}
-                  image={item.image}
-                  name={item.name}
-                  gender={item.gender}
-                  age={item.age}
-                  breed={item.breed}
-                />
-              );
-            })}
+      <div
+        className="w-screen z-3 bg-center bg-no-repeat bg-cover bg-fixed py-10"
+        style={{
+          backgroundImage: `url(${contentCover})`,
+        }}
+      >
+        <Card>
+          <div style={{ margin: "0 0", padding: "3rem 10%" }}>
+            <AdoptAbout />
+            <Filter />
+            <div className="allCards">
+              {AdoptData.slice(
+                currentPage * itemsPerPage - itemsPerPage,
+                currentPage * itemsPerPage
+              ).map((item) => {
+                return (
+                  <AdoptCard
+                    key={item.id}
+                    image={item.image}
+                    name={item.name}
+                    gender={item.gender}
+                    age={item.age}
+                    breed={item.breed}
+                  />
+                );
+              })}
+            </div>
+            <div className="flex gap-4 justify-end -mt-8">
+              <Button
+                onClick={prevHandler}
+                disabled={isPrevDisabled}
+                className="disabled:opacity-20"
+              >
+                Back
+              </Button>
+              <Button
+                onClick={nextHandler}
+                disabled={isNextDisabled}
+                className="disabled:opacity-20"
+              >
+                Next
+              </Button>
+            </div>
           </div>
-          <div className="flex gap-4 justify-end -mt-8">
-            <Button
-              onClick={prevHandler}
-              disabled={isPrevDisabled}
-              className="disabled:opacity-20"
-            >
-              Back
-            </Button>
-            <Button
-              onClick={nextHandler}
-              disabled={isNextDisabled}
-              className="disabled:opacity-20"
-            >
-              Next
-            </Button>
-          </div>
-        </div>
-      </Card>
+        </Card>
+      </div>
     </>
   );
 };
