@@ -6,6 +6,7 @@ import river from "../../assets/img/adopt/river.jpg";
 export const AdoptData = [
   {
     id: 1,
+    type: "dog",
     image: simba,
     name: "SIMBA",
     gender: "Male",
@@ -14,6 +15,7 @@ export const AdoptData = [
   },
   {
     id: 2,
+    type: "cat",
     image: leelo,
     name: "LEELO",
     gender: "Male",
@@ -22,6 +24,7 @@ export const AdoptData = [
   },
   {
     id: 3,
+    type: "cat",
     image: mylo,
     name: "MYLO",
     gender: "Female",
@@ -30,6 +33,7 @@ export const AdoptData = [
   },
   {
     id: 4,
+    type: "dog",
     image: river,
     name: "RIVER",
     gender: "Male",

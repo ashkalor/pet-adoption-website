@@ -1,7 +1,7 @@
 import Button from "../UI/Button/Button";
 import "./AdoptCard.css";
 
-const AdoptCard = ({ image, name, gender, age, breed }) => {
+const AdoptCard = ({image, name, gender, age, breed }) => {
   return (
     <div className="card mb-10">
       <div className="outerImage">
@@ -32,7 +32,7 @@ const AdoptCard = ({ image, name, gender, age, breed }) => {
           {breed}
         </p>
 
-        <Button className="">MORE INFO</Button>
+        <Button className="w-44">MORE INFO</Button>
       </div>
     </div>
   );
