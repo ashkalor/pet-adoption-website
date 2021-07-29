@@ -51,7 +51,7 @@ const Adopt = () => {
           <div style={{ margin: "0 0", padding: "3rem 10%" }}>
             <AdoptAbout />
             <Filter />
-            <div className="allCards">
+            <div className="grid grid-cols-2 gap-12 w-full">
               {AdoptData.slice(
                 currentPage * itemsPerPage - itemsPerPage,
                 currentPage * itemsPerPage
@@ -64,11 +64,15 @@ const Adopt = () => {
                     gender={item.gender}
                     age={item.age}
                     breed={item.breed}
+                    vaccinated={item.vaccinated}
+                    petFriendly={item.petFriendly}
+                    specialNeeds={item.specialNeeds}
+                    childFriendly={item.childFriendly}
                   />
                 );
               })}
             </div>
-            <div className="flex gap-4 justify-end -mt-8">
+            <div className="flex gap-4 justify-end mt-6">
               <Button
                 onClick={prevHandler}
                 disabled={isPrevDisabled}

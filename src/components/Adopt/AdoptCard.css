@@ -9,16 +9,6 @@
   border-radius: 25px;
   display: flex;
 }
-.image {
-  margin: 20% 15%;
-  border-radius: 100px;
-}
-
-.image:hover {
-  transition: all 0.5s ease-in-out;
-  transform: scale(1.1);
-}
-
 .details {
   display: flex;
   flex-direction: column;
