@@ -1,5 +1,5 @@
 import "./AdoptAbout.css";
-import bullet from "../../assets/img/adopt/bullet.png";
+import { FaCheckCircle } from "react-icons/fa";
 const AdoptAbout = () => {
   return (
     <div>
@@ -13,22 +13,21 @@ const AdoptAbout = () => {
             adipisicing elit
           </p>
         </div>
-        <div className="list">
-          <div>
-            <img src={bullet} alt="bullet" width="20px" />
-            <span className="listItem">
-              All pets are neutered and vaccinated
-            </span>
+        <div className="flex flex-col">
+          <div className="flex justify-start items-start">
+            <FaCheckCircle size="1rem" className="mt-1" />
+            <span className="ml-2">All pets are neutered and vaccinated</span>
           </div>
-          <div>
-            <img src={bullet} alt="bullet" width="20px" />
-            <span className="listItem">
+          <div className="flex justify-start items-center">
+            <FaCheckCircle size="1rem" />
+            <span className="mt-1 ml-2">
               All pets are examined by a vet and treated as required
             </span>
           </div>
-          <div>
-            <img src={bullet} alt="bullet" width="20px" />
-            <span className="listItem">
+          <div className="flex justify-start items-start">
+            <FaCheckCircle size="1rem" className="mt-1" />
+
+            <span className="ml-2">
               We help to match you with a pet that meets your needs
             </span>
           </div>

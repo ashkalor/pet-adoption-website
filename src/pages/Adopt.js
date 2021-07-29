@@ -2,7 +2,6 @@ import heroAdopt from "../assets/img/adopt/hero-adopt.jpg";
 import AdoptAbout from "../components/Adopt/AdoptAbout";
 import AdoptCard from "../components/Adopt/AdoptCard";
 import Filter from "../components/Adopt/Filter";
-import "../components/Adopt/AdoptCard.css";
 import Card from "../components/UI/Card/Card";
 import HeroSmall from "../components/UI/Hero/HeroSmall";
 import { useState, useEffect } from "react";
