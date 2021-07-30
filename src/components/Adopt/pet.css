@@ -1,0 +1,20 @@
+.meet {
+    /* background-color: aquamarine; */
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 15rem;
+    display: flex;
+}
+.info {
+    /* background-color: bisque; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 5% 10% 2% 10%;
+  }
+
+.btnAdoptMe {
+    /* background-color: yellowgreen; */
+    margin: 0% 10% 2% 10% ;
+    padding-bottom: 2%;
+}

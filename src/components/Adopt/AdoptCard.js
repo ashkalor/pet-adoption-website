@@ -1,7 +1,9 @@
 import Button from "../UI/Button/Button";
+import {Link} from "react-router-dom";
 import { FaSyringe } from "react-icons/fa";
 import { MdChildFriendly } from "react-icons/md";
 import { GiHeartPlus, GiJumpingDog } from "react-icons/gi";
+//import HeroSmall from "../UI/Hero/HeroSmall";
 
 const AdoptCard = ({
   image,
@@ -71,7 +73,9 @@ const AdoptCard = ({
             </div>
           )}
         </div>
-        <Button className=" w-2/5">More Info</Button>
+        <Link to="/adopt/simba">        
+          <Button className=" w-44">More Info</Button>
+        </Link>
       </div>
     </div>
   );

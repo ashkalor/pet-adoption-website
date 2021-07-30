@@ -7,6 +7,8 @@ import Contact from "./pages/Contact";
 import Shelter from "./pages/Shelter";
 import Donate from "./pages/Donate";
 import ScrollToTop from "./components/layout/ScrollToTop";
+import Simba from "./pages/Simba";
+import HeroSmall from "./components/UI/Hero/HeroSmall";
 
 function App() {
   return (
@@ -33,6 +35,9 @@ function App() {
           </Route>
           <Route path="/contact" exact>
             <Contact />
+          </Route>
+          <Route path="/adopt/simba" component={HeroSmall}>
+           <Simba />
           </Route>
           <Route path="*" exact>
             <Redirect to="/home" />

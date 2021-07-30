@@ -1,0 +1,31 @@
+.allCards {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: auto auto;
+}
+.card {
+  background-color: #b1a9a970;
+  height: 20rem;
+  border-radius: 25px;
+  display: flex;
+}
+.image {
+  margin: 20% 15%;
+  border-radius: 100px;
+}
+
+.image:hover {
+  transition: all 0.5s ease-in-out;
+  transform: scale(1.1);
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 10% 20% 10% 10%;
+}
+
+.line {
+  margin-bottom: 5%;
+}
