@@ -6,42 +6,39 @@ import Adopt from "./pages/Adopt";
 import Contact from "./pages/Contact";
 import Shelter from "./pages/Shelter";
 import Donate from "./pages/Donate";
+import ScrollToTop from "./components/layout/ScrollToTop";
 
 function App() {
   return (
     <Layout>
-      <Switch>
-        <Route path="/" exact>
-          <Redirect to="/home" />
-        </Route>
-        <Route path="/home" exact>
-          <Home />
-        </Route>
-        <Route path="/adopt" exact>
-          <Adopt />
-        </Route>
-        <Route path="/shelter" exact>
-          <Shelter />
-        </Route>
-        <Route path="/donate" exact>
-          <Donate />
-        </Route>
-        <Route path="/contact" exact>
-          <Contact />
-        </Route>
-        <Route path="/donate/search-by-district" exact>
-          <Shelter />
-        </Route>
-        <Route path="/donate/search-by-pin" exact>
-          <Shelter />
-        </Route>
-        <Route path="/donate/search-by-name" exact>
-          <Shelter />
-        </Route>
-        <Route path="*" exact>
-          <Redirect to="/home" />
-        </Route>
-      </Switch>
+      <ScrollToTop>
+        <Switch>
+          <Route path="/" exact>
+            <Redirect to="/home" />
+          </Route>
+          <Route path="/home" exact>
+            <Home />
+          </Route>
+          <Route path="/adopt" exact>
+            <Adopt />
+          </Route>
+          <Route path="/shelter/" exact>
+            <Redirect to="/shelter/:searchType" exact />
+          </Route>
+          <Route path="/shelter/:searchType" exact>
+            <Shelter />
+          </Route>
+          <Route path="/donate" exact>
+            <Donate />
+          </Route>
+          <Route path="/contact" exact>
+            <Contact />
+          </Route>
+          <Route path="*" exact>
+            <Redirect to="/home" />
+          </Route>
+        </Switch>
+      </ScrollToTop>
     </Layout>
   );
 }
