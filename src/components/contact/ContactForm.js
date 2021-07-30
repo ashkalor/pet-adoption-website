@@ -81,19 +81,6 @@ const ContactForm = (props) => {
     resetMessage();
   };
 
-  const firstNameClasses = firstNameHasError
-    ? "form-control invalid"
-    : "form-control";
-  const lastNameClasses = lastNameHasError
-    ? "form-control invalid"
-    : "form-control";
-  const emailClasses = emailHasError ? "form-control invalid" : "form-control";
-  const subjectClasses = subjectHasError
-    ? "form-control invalid"
-    : "form-control";
-  const messageClasses = messageHasError
-    ? "form-control invalid"
-    : "form-control";
   const errorText = "text-red-400";
   return (
     <form
@@ -104,7 +91,7 @@ const ContactForm = (props) => {
     >
       <div className="flex flex-col mb-5">
         <div className="flex justify-between gap-12">
-          <div className={`${firstNameClasses} flex  flex-grow flex-col`}>
+          <div className={` flex  flex-grow flex-col`}>
             <label htmlFor="name" className="text-xl  mb-1">
               First Name
             </label>
@@ -120,7 +107,7 @@ const ContactForm = (props) => {
               <p className={errorText}>Please enter a first name.</p>
             )}
           </div>
-          <div className={`${lastNameClasses} flex  flex-grow flex-col`}>
+          <div className={` flex  flex-grow flex-col`}>
             <label htmlFor="name" className="text-xl  mb-1">
               Last Name
             </label>
@@ -138,7 +125,7 @@ const ContactForm = (props) => {
           </div>
         </div>
       </div>
-      <div className={`${emailClasses} flex  flex-grow flex-col`}>
+      <div className={` flex  flex-grow flex-col`}>
         <label htmlFor="name " className="text-xl mb-1">
           E-Mail Address
         </label>
@@ -154,7 +141,7 @@ const ContactForm = (props) => {
           <p className={errorText}>Please enter a valid email address.</p>
         )}
       </div>
-      <div className={`${subjectClasses} flex  flex-grow flex-col`}>
+      <div className={` flex  flex-grow flex-col`}>
         <label htmlFor="subject" className="text-xl mb-1">
           Subject
         </label>
@@ -170,7 +157,7 @@ const ContactForm = (props) => {
           <p className={errorText}>Please enter a subject.</p>
         )}
       </div>
-      <div className={`${messageClasses} flex  flex-grow flex-col`}>
+      <div className={` flex  flex-grow flex-col`}>
         <label htmlFor="message" className="text-xl mb-1">
           Message
         </label>
