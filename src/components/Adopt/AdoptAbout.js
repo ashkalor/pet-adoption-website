@@ -6,7 +6,7 @@ const AdoptAbout = () => {
       <div className="text-5xl font-semibold">Adopt a pet</div>
       <div className="adoptAbout">
         <div className="adopt">
-          <p className="info">
+          <p className="">
             Elit uasi quidem minus id omnis a nibh fusce mollis imperdie tlorem
             ipuset phas ellus ac sodales Lorem ipsum dolor Phas ellus ac sodales
             felis tiam non metus. lorem ipsum dolor sit amet, consectetur
