@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import Button from "../components/UI/Button/Button";
 import contentCover from "../assets/img/content-cover.jpg";
 import SearchByPin from "../components/shelter/SearchByPin";
+import SearchByDistrict from "../components/shelter/SearchByDistrict";
 
 const Shelter = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -86,7 +87,9 @@ const Shelter = () => {
                 <Route path="/shelter/search-by-pin" exact>
                   <SearchByPin />
                 </Route>
-                <Route path="/shelter/search-by-district" exact></Route>
+                <Route path="/shelter/search-by-district" exact>
+                  <SearchByDistrict />
+                </Route>
                 <Route path="/shelter/show-all-places" exact>
                   <div className="flex flex-col gap-8 mb-16">
                     {ShelterData.slice(
