@@ -1,8 +1,5 @@
 export const StateNDistrict = {
-  states: [
-    {
-      state: "Andhra Pradesh",
-      districts: [
+      "Andhra Pradesh": [
         "Anantapur",
         "Chittoor",
         "East Godavari",
@@ -17,10 +14,7 @@ export const StateNDistrict = {
         "West Godavari",
         "YSR Kadapa",
       ],
-    },
-    {
-      state: "Arunachal Pradesh",
-      districts: [
+      "Arunachal Pradesh": [
         "Tawang",
         "West Kameng",
         "East Kameng",
@@ -43,10 +37,7 @@ export const StateNDistrict = {
         "Tirap",
         "Longding",
       ],
-    },
-    {
-      state: "Assam",
-      districts: [
+      "Assam": [
         "Baksa",
         "Barpeta",
         "Biswanath",
@@ -81,10 +72,7 @@ export const StateNDistrict = {
         "Udalguri",
         "West Karbi Anglong",
       ],
-    },
-    {
-      state: "Bihar",
-      districts: [
+      Bihar: [
         "Araria",
         "Arwal",
         "Aurangabad",
@@ -124,14 +112,8 @@ export const StateNDistrict = {
         "Vaishali",
         "West Champaran",
       ],
-    },
-    {
-      state: "Chandigarh (UT)",
-      districts: ["Chandigarh"],
-    },
-    {
-      state: "Chhattisgarh",
-      districts: [
+      "Chandigarh (UT)": ["Chandigarh"],
+      "Chhattisgarh": [
         "Balod",
         "Baloda Bazar",
         "Balrampur",
@@ -160,18 +142,11 @@ export const StateNDistrict = {
         "Surajpur  ",
         "Surguja",
       ],
-    },
-    {
-      state: "Dadra and Nagar Haveli (UT)",
-      districts: ["Dadra & Nagar Haveli"],
-    },
-    {
-      state: "Daman and Diu (UT)",
-      districts: ["Daman", "Diu"],
-    },
-    {
-      state: "Delhi (NCT)",
-      districts: [
+
+      "Dadra and Nagar Haveli (UT)": ["Dadra & Nagar Haveli"],
+
+      "Daman and Diu (UT)": ["Daman", "Diu"],
+      "Delhi (NCT)": [
         "Central Delhi",
         "East Delhi",
         "New Delhi",
@@ -184,14 +159,10 @@ export const StateNDistrict = {
         "South West  Delhi",
         "West Delhi",
       ],
-    },
-    {
-      state: "Goa",
-      districts: ["North Goa", "South Goa"],
-    },
-    {
-      state: "Gujarat",
-      districts: [
+
+      "Goa": ["North Goa", "South Goa"],
+
+      "Gujarat": [
         "Ahmedabad",
         "Amreli",
         "Anand",
@@ -226,10 +197,8 @@ export const StateNDistrict = {
         "Vadodara",
         "Valsad",
       ],
-    },
-    {
-      state: "Haryana",
-      districts: [
+
+      "Haryana": [
         "Ambala",
         "Bhiwani",
         "Charkhi Dadri",
@@ -253,10 +222,8 @@ export const StateNDistrict = {
         "Sonipat",
         "Yamunanagar",
       ],
-    },
-    {
-      state: "Himachal Pradesh",
-      districts: [
+  
+      "Himachal Pradesh": [
         "Bilaspur",
         "Chamba",
         "Hamirpur",
@@ -270,10 +237,8 @@ export const StateNDistrict = {
         "Solan",
         "Una",
       ],
-    },
-    {
-      state: "Jammu and Kashmir",
-      districts: [
+
+      "Jammu and Kashmir": [
         "Anantnag",
         "Bandipore",
         "Baramulla",
@@ -297,10 +262,8 @@ export const StateNDistrict = {
         "Srinagar",
         "Udhampur",
       ],
-    },
-    {
-      state: "Jharkhand",
-      districts: [
+  
+      "Jharkhand": [
         "Bokaro",
         "Chatra",
         "Deoghar",
@@ -326,10 +289,8 @@ export const StateNDistrict = {
         "Simdega",
         "West Singhbhum",
       ],
-    },
-    {
-      state: "Karnataka",
-      districts: [
+   
+      "Karnataka": [
         "Bagalkot",
         "Ballari (Bellary)",
         "Belagavi (Belgaum)",
@@ -361,10 +322,8 @@ export const StateNDistrict = {
         "Vijayapura (Bijapur)",
         "Yadgir",
       ],
-    },
-    {
-      state: "Kerala",
-      districts: [
+ 
+      "Kerala": [
         "Alappuzha",
         "Ernakulam",
         "Idukki",
@@ -380,10 +339,8 @@ export const StateNDistrict = {
         "Thrissur",
         "Wayanad",
       ],
-    },
-    {
-      state: "Lakshadweep (UT)",
-      districts: [
+
+      "Lakshadweep (UT)": [
         "Agatti",
         "Amini",
         "Androth",
@@ -395,10 +352,8 @@ export const StateNDistrict = {
         "Kilthan",
         "Minicoy",
       ],
-    },
-    {
-      state: "Madhya Pradesh",
-      districts: [
+  
+      "Madhya Pradesh": [
         "Agar Malwa",
         "Alirajpur",
         "Anuppur",
@@ -451,10 +406,8 @@ export const StateNDistrict = {
         "Umaria",
         "Vidisha",
       ],
-    },
-    {
-      state: "Maharashtra",
-      districts: [
+
+      "Maharashtra": [
         "Ahmednagar",
         "Akola",
         "Amravati",
@@ -492,10 +445,8 @@ export const StateNDistrict = {
         "Washim",
         "Yavatmal",
       ],
-    },
-    {
-      state: "Manipur",
-      districts: [
+
+      "Manipur": [
         "Bishnupur",
         "Chandel",
         "Churachandpur",
@@ -513,10 +464,8 @@ export const StateNDistrict = {
         "Thoubal",
         "Ukhrul",
       ],
-    },
-    {
-      state: "Meghalaya",
-      districts: [
+
+      "Meghalaya": [
         "East Garo Hills",
         "East Jaintia Hills",
         "East Khasi Hills",
@@ -529,10 +478,8 @@ export const StateNDistrict = {
         "West Jaintia Hills",
         "West Khasi Hills",
       ],
-    },
-    {
-      state: "Mizoram",
-      districts: [
+
+      "Mizoram": [
         "Aizawl",
         "Champhai",
         "Kolasib",
@@ -542,10 +489,8 @@ export const StateNDistrict = {
         "Saiha",
         "Serchhip",
       ],
-    },
-    {
-      state: "Nagaland",
-      districts: [
+ 
+      "Nagaland": [
         "Dimapur",
         "Kiphire",
         "Kohima",
@@ -558,10 +503,8 @@ export const StateNDistrict = {
         "Wokha",
         "Zunheboto",
       ],
-    },
-    {
-      state: "Odisha",
-      districts: [
+
+      'Odisha': [
         "Angul",
         "Balangir",
         "Balasore",
@@ -593,14 +536,10 @@ export const StateNDistrict = {
         "Sonepur",
         "Sundargarh",
       ],
-    },
-    {
-      state: "Puducherry (UT)",
-      districts: ["Karaikal", "Mahe", "Pondicherry", "Yanam"],
-    },
-    {
-      state: "Punjab",
-      districts: [
+
+      "Puducherry (UT)": ["Karaikal", "Mahe", "Pondicherry", "Yanam"],
+
+      "Punjab": [
         "Amritsar",
         "Barnala",
         "Bathinda",
@@ -624,10 +563,7 @@ export const StateNDistrict = {
         "Sangrur",
         "Tarn Taran",
       ],
-    },
-    {
-      state: "Rajasthan",
-      districts: [
+      "Rajasthan": [
         "Ajmer",
         "Alwar",
         "Banswara",
@@ -662,14 +598,9 @@ export const StateNDistrict = {
         "Tonk",
         "Udaipur",
       ],
-    },
-    {
-      state: "Sikkim",
-      districts: ["East Sikkim", "North Sikkim", "South Sikkim", "West Sikkim"],
-    },
-    {
-      state: "Tamil Nadu",
-      districts: [
+ 
+      "Sikkim": ["East Sikkim", "North Sikkim", "South Sikkim", "West Sikkim"],
+      "Tamil Nadu": [
         "Ariyalur",
         "Chennai",
         "Coimbatore",
@@ -703,10 +634,8 @@ export const StateNDistrict = {
         "Viluppuram",
         "Virudhunagar",
       ],
-    },
-    {
-      state: "Telangana",
-      districts: [
+
+      "Telangana": [
         "Adilabad",
         "Bhadradri Kothagudem",
         "Hyderabad",
@@ -739,10 +668,8 @@ export const StateNDistrict = {
         "Warangal (Urban)",
         "Yadadri Bhuvanagiri",
       ],
-    },
-    {
-      state: "Tripura",
-      districts: [
+
+      "Tripura": [
         "Dhalai",
         "Gomati",
         "Khowai",
@@ -752,10 +679,8 @@ export const StateNDistrict = {
         "Unakoti",
         "West Tripura",
       ],
-    },
-    {
-      state: "Uttarakhand",
-      districts: [
+
+      "Uttarakhand": [
         "Almora",
         "Bageshwar",
         "Chamoli",
@@ -770,10 +695,8 @@ export const StateNDistrict = {
         "Udham Singh Nagar",
         "Uttarkashi",
       ],
-    },
-    {
-      state: "Uttar Pradesh",
-      districts: [
+
+      "Uttar Pradesh": [
         "Agra",
         "Aligarh",
         "Allahabad",
@@ -850,10 +773,7 @@ export const StateNDistrict = {
         "Unnao",
         "Varanasi",
       ],
-    },
-    {
-      state: "West Bengal",
-      districts: [
+      "West Bengal": [
         "Alipurduar",
         "Bankura",
         "Birbhum",
@@ -877,5 +797,4 @@ export const StateNDistrict = {
         "Uttar Dinajpur (North Dinajpur)",
       ],
     },
-  ],
-};
+
