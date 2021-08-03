@@ -1,57 +1,55 @@
 import React, { useState, useEffect } from "react";
-
-const countries = {
-  France: ["Paris", "Marseille", "Lille", "Lyon"],
-  Usa: ["New York", "San Francisco", "Austin", "Dallas"],
-};
+import { StateNDistrict } from "./StateNDistrictData";
 
 const SearchByDistrict = () => {
-  const [countryData, setCountryData] = useState(["Usa"]);
-  const [selectedCountry, setSelectedCountry] = useState("");
+  const [stateData, setStateData] = useState(["Usa"]);
+  const [selectedState, setSelectedState] = useState("");
 
-  const checkInsertInArray = (newCountry) => {
-    let findStatus = countryData.find((x) => {
-      return x === newCountry;
+  const checkInsertInArray = (newState) => {
+    let findStatus = stateData.find((x) => {
+      return x === newState;
     });
     if (!findStatus) {
-      setCountryData([...countryData, newCountry]);
+      setStateData([...stateData, newState]);
     }
   };
 
-  const countryChange = (event) => {
+  const stateChange = (event) => {
     if (event.target.value) {
-      setSelectedCountry(event.target.value);
+      setSelectedState(event.target.value);
     }
   };
 
   useEffect(() => {
-    Object.keys(countries).forEach((country) => {
-      checkInsertInArray(country);
+    Object.keys(StateNDistrict).forEach((state) => {
+      checkInsertInArray(state);
     });
   });
 
   return (
     <>
-      <span>Country:</span>
-      <select onChange={countryChange}>
-        <option value="" />
-        {countryData.map((allCountries) => {
-          return <option value={allCountries}>{allCountries}</option>;
+      <select onChange={stateChange}>
+        <option value="" disabled selected hidden>
+          Please select State
+        </option>
+        {stateData.map((allStates) => {
+          return <option value={allStates}>{allStates}</option>;
         })}
       </select>
       <br />
-      {selectedCountry ? (
+      {selectedState ? (
         <>
-          <span>City:</span>{" "}
           <select>
-            <option value="" />
-            {countries[selectedCountry].map((allCountries) => {
-              return <option value={allCountries}>{allCountries}</option>;
+            <option value="" disabled selected hidden>
+              Please select District
+            </option>
+            {StateNDistrict[selectedState].map((allStates) => {
+              return <option value={allStates}>{allStates}</option>;
             })}
           </select>
         </>
       ) : (
-        <span>City: Please select a country first</span>
+        <span>Please select a State first</span>
       )}
     </>
   );
