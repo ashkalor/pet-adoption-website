@@ -28,18 +28,20 @@ const SearchByDistrict = () => {
 
   return (
     <>
-      <select onChange={stateChange}>
-        <option value="" disabled selected hidden>
-          Please select State
-        </option>
-        {stateData.map((allStates) => {
-          return <option value={allStates}>{allStates}</option>;
-        })}
-      </select>
-      <br />
-      {selectedState ? (
-        <>
-          <select>
+      <div className="flex gap-3 items-center justify-center ">
+        <select
+          className="appearance-none block w-1/4 text-gray-700 border-2 border-gray-200 rounded-3xl py-3 px-4  leading-tight focus:outline-none focus:bg-white focus:border-purple-700"
+          onChange={stateChange}
+        >
+          <option value="" disabled selected hidden>
+            Please select State
+          </option>
+          {stateData.map((allStates) => {
+            return <option value={allStates}>{allStates}</option>;
+          })}
+        </select>
+        {selectedState ? (
+          <select className="appearance-none block w-1/4 text-gray-700 border-2 border-gray-200 rounded-3xl py-3 px-4  leading-tight focus:outline-none focus:bg-white focus:border-purple-700">
             <option value="" disabled selected hidden>
               Please select District
             </option>
@@ -47,10 +49,17 @@ const SearchByDistrict = () => {
               return <option value={allStates}>{allStates}</option>;
             })}
           </select>
-        </>
-      ) : (
-        <span>Please select a State first</span>
-      )}
+        ) : (
+          <select className="appearance-none block w-1/4 text-gray-700 border-2 border-gray-200 rounded-3xl py-3 px-4  leading-tight focus:outline-none focus:bg-white focus:border-purple-700">
+            <option value="" disabled selected hidden>
+              Please select District
+            </option>
+          </select>
+        )}
+        <button className="bg-purple-700 w-32 py-3 px-4  rounded-3xl text-white hover:bg-purple-600">
+          Search
+        </button>
+      </div>
     </>
   );
 };
