@@ -71,6 +71,7 @@ const SearchByPin = () => {
     console.log(pinValue);
     resetPin();
   };
+
   const errorText = "text-red-400 text-center";
   return (
     <div>
@@ -134,7 +135,7 @@ const SearchByPin = () => {
             {ShelterData.slice(
               currentPage * itemsPerPage - itemsPerPage,
               currentPage * itemsPerPage
-            ).filter((item) => item.pin === formPin).length === [] && (
+            ).filter((item) => item.pin === formPin).length !== 0 && (
               <div className="flex gap-4 justify-end mt-8">
                 <Button
                   onClick={prevHandler}

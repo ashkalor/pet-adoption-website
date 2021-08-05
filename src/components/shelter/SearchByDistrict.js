@@ -65,7 +65,6 @@ const SearchByDistrict = () => {
     setSearchState(selectedState);
     setSearchDistrict(selectedDistrict.toLowerCase());
   };
-
   return (
     <>
       <div className="flex gap-3 items-center justify-center ">
@@ -142,10 +141,12 @@ const SearchByDistrict = () => {
                 );
               })}
           </div>
-          {ShelterData.slice(
-            currentPage * itemsPerPage - itemsPerPage,
-            currentPage * itemsPerPage
-          ).filter((item) => item.state === searchState).length === [] && (
+          {!(
+            ShelterData.slice(
+              currentPage * itemsPerPage - itemsPerPage,
+              currentPage * itemsPerPage
+            ).filter((item) => item.state === searchState).length === 0
+          ) && (
             <div className="flex gap-4 justify-end mt-8">
               <Button
                 onClick={prevHandler}
