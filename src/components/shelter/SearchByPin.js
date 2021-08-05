@@ -131,22 +131,27 @@ const SearchByPin = () => {
                   );
                 })}
             </div>
-            <div className="flex gap-4 justify-end mt-8">
-              <Button
-                onClick={prevHandler}
-                disabled={isPrevDisabled}
-                className="disabled:opacity-20"
-              >
-                Back
-              </Button>
-              <Button
-                onClick={nextHandler}
-                disabled={isNextDisabled}
-                className="disabled:opacity-20"
-              >
-                Next
-              </Button>
-            </div>
+            {ShelterData.slice(
+              currentPage * itemsPerPage - itemsPerPage,
+              currentPage * itemsPerPage
+            ).filter((item) => item.pin === formPin).length === [] && (
+              <div className="flex gap-4 justify-end mt-8">
+                <Button
+                  onClick={prevHandler}
+                  disabled={isPrevDisabled}
+                  className="disabled:opacity-20"
+                >
+                  Back
+                </Button>
+                <Button
+                  onClick={nextHandler}
+                  disabled={isNextDisabled}
+                  className="disabled:opacity-20"
+                >
+                  Next
+                </Button>
+              </div>
+            )}
           </div>
         )}
       </div>
