@@ -1,6 +1,3 @@
-import { Link } from "react-router-dom";
-import Button from "../UI/Button/Button";
-
 const CharityItem = (props) => {
   const { logo, url, title, donateLink } = props;
 
@@ -13,7 +10,7 @@ const CharityItem = (props) => {
           className=" object-cover object-top h-36 w-36 rounded-full"
         />
       </div>
-      <div>
+      <div className="flex flex-col">
         <p className="text-2xl font-medium">{title}</p>
         <a
           href={url}
@@ -23,9 +20,14 @@ const CharityItem = (props) => {
         >
           {url}
         </a>
-        <Link to={donateLink}>
-          <Button className="">Donate</Button>
-        </Link>
+        <a
+          className=" bg-purple-700 w-28 py-2 rounded-full text-white text-center mt-6 hover:bg-purple-600"
+          href={donateLink}
+          rel="noreferrer noopener nofollow"
+          target="_blank"
+        >
+          Donate
+        </a>
       </div>
     </div>
   );
