@@ -15,6 +15,9 @@ const SearchByDistrict = () => {
   const [searchState, setSearchState] = useState("");
   const [searchDistrict, setSearchDistrict] = useState("");
 
+  const districtHandler = (event) => {
+    setSelectedDistrict(event.target.value);
+  };
   const checkInsertInArray = (newState) => {
     let findStatus = stateData.find((x) => {
       return x === newState;
@@ -64,16 +67,20 @@ const SearchByDistrict = () => {
   const searchHandler = () => {
     setSearchState(selectedState);
     setSearchDistrict(selectedDistrict.toLowerCase());
+    setSelectedState("");
+    setSelectedDistrict("");
   };
   return (
     <>
       <div className="flex gap-3 items-center justify-center ">
         <select
+          value={selectedState}
           className="appearance-none block w-1/4 text-gray-700 border-2 border-gray-200 rounded-3xl py-3 px-4  leading-tight focus:outline-none focus:bg-white focus:border-purple-700"
           onChange={stateChangeHandler}
         >
-          <option value={selectedState} disabled hidden />
-
+          <option disabled hidden value="">
+            Please select State
+          </option>
           {stateData.map((allStates, index) => {
             return (
               <option key={index} value={allStates}>
@@ -82,12 +89,11 @@ const SearchByDistrict = () => {
             );
           })}
         </select>
-        {selectedState ? (
+        {StateNDistrict[selectedState] ? (
           <select
             onChange={districtChangeHandler}
             className="appearance-none block w-1/4 text-gray-700 border-2 border-gray-200 rounded-3xl py-3 px-4  leading-tight focus:outline-none focus:bg-white focus:border-purple-700"
           >
-            <option defaultValue="Please select District" disabled hidden />
             {StateNDistrict[selectedState].map((allStates, index) => {
               return (
                 <option key={index} value={allStates}>
@@ -97,8 +103,13 @@ const SearchByDistrict = () => {
             })}
           </select>
         ) : (
-          <select className="appearance-none block w-1/4 text-gray-700 border-2 border-gray-200 rounded-3xl py-3 px-4  leading-tight focus:outline-none focus:bg-white focus:border-purple-700">
-            <option defaultValue="Please select District" disabled hidden />
+          <select
+            value="Please select District"
+            disabled
+            onChange={districtHandler}
+            className="appearance-none block w-1/4 text-gray-700 border-2 border-gray-200 rounded-3xl py-3 px-4  leading-tight focus:outline-none focus:bg-white focus:border-purple-700"
+          >
+            <option value="">Please select District</option>
           </select>
         )}
         <button
