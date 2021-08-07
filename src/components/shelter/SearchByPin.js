@@ -10,7 +10,7 @@ const SearchByPin = () => {
   const [isNextDisabled, setIsNextDisabled] = useState(false);
   const [isPrevDisabled, setIsPrevDisabled] = useState(false);
   const [formPin, setFormPin] = useState(null);
-  const [formPinExists, setFormPinExists] = useState(null);
+  const [formPinExists, setFormPinExists] = useState(false);
 
   useEffect(() => {
     setTotalPages(Math.round(ShelterData.length / itemsPerPage));
@@ -72,10 +72,9 @@ const SearchByPin = () => {
     resetPin();
   };
 
-  const errorText = "text-red-400 text-center";
   return (
     <div>
-      <div>
+      <div className="flex flex-col">
         <form onSubmit={submitHandler}>
           <div className="flex items-center gap-6 mb-12 justify-center">
             <label htmlFor="pin" />
@@ -93,7 +92,9 @@ const SearchByPin = () => {
             </button>
           </div>
           {pinHasError && (
-            <p className={errorText}>Please enter a valid PIN.</p>
+            <p className="text-red-600 text-left ml-32 -mt-8">
+              Please enter a valid PIN.
+            </p>
           )}
         </form>
 
@@ -155,6 +156,16 @@ const SearchByPin = () => {
             )}
           </div>
         )}
+        {ShelterData.slice(
+          currentPage * itemsPerPage - itemsPerPage,
+          currentPage * itemsPerPage
+        ).filter((item) => item.pin === formPin).length === 0 &&
+          formPinExists &&
+          !pinHasError && (
+            <div className="text-left ml-32 -mt-8 text-red-600">
+              No Records found
+            </div>
+          )}
       </div>
     </div>
   );

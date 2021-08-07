@@ -67,8 +67,6 @@ const SearchByDistrict = () => {
   const searchHandler = () => {
     setSearchState(selectedState);
     setSearchDistrict(selectedDistrict.toLowerCase());
-    setSelectedState("");
-    setSelectedDistrict("");
   };
   return (
     <>
