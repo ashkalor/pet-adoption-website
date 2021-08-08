@@ -7,7 +7,6 @@ const Carousel = (props) => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [length, setLength] = useState(children.length);
-  const [touchPosition, setTouchPosition] = useState(null);
 
   useEffect(() => {
     setLength(children.length);
@@ -23,33 +22,6 @@ const Carousel = (props) => {
       setCurrentIndex((prevCurrentIndex) => prevCurrentIndex - 1);
     }
   };
-  const touchStartHandler = (e) => {
-    console.log(e);
-    console.log(e.touches);
-    const touchDown = e.touches[0].clientX;
-
-    setTouchPosition(touchDown);
-  };
-  const touchMoveHandler = (e) => {
-    const touchDown = touchPosition;
-
-    if (touchDown === null) {
-      return;
-    }
-
-    const currentTouch = e.touches[0].clientX;
-    const diff = touchDown - currentTouch;
-
-    if (diff > 5) {
-      next();
-    }
-
-    if (diff < -5) {
-      prev();
-    }
-
-    setTouchPosition(null);
-  };
 
   return (
     <div className={`${classes.container} ${className}`} style={style}>
@@ -57,11 +29,7 @@ const Carousel = (props) => {
         {currentIndex > 0 && (
           <GrFormPrevious size="2rem" className={classes.prev} onClick={prev} />
         )}
-        <div
-          className={classes["content-wrapper"]}
-          onTouchStart={touchStartHandler}
-          onTouchMove={touchMoveHandler}
-        >
+        <div className={classes["content-wrapper"]}>
           <div
             className={`${classes.content} ${classes.show - show}`}
             style={{
