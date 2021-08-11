@@ -8,7 +8,6 @@ import Shelter from "./pages/Shelter";
 import Donate from "./pages/Donate";
 import ScrollToTop from "./components/layout/ScrollToTop";
 import Simba from "./pages/Simba";
-import HeroSmall from "./components/UI/Hero/HeroSmall";
 
 function App() {
   return (
@@ -25,7 +24,7 @@ function App() {
             <Adopt />
           </ScrollToTop>
         </Route>
-        <Route path="/shelter/" exact>
+        <Route path="/shelter" exact>
           <Redirect to="/shelter/:searchType" exact />
         </Route>
         <Route path="/shelter/:searchType" exact>
@@ -37,7 +36,7 @@ function App() {
         <Route path="/contact" exact>
           <Contact />
         </Route>
-        <Route path="/adopt/simba" component={HeroSmall}>
+        <Route path="/adopt/simba">
           <Simba />
         </Route>
         <Route path="*" exact>
