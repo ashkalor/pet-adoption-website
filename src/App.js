@@ -8,8 +8,19 @@ import Shelter from "./pages/Shelter";
 import Donate from "./pages/Donate";
 import ScrollToTop from "./components/layout/ScrollToTop";
 import Simba from "./pages/Simba";
+import firebase from "./firebase";
+import { useEffect } from "react";
+import { AdoptData } from "./components/Adopt/AdoptData";
 
 function App() {
+  useEffect(() => {
+    const sendData = async () => {
+      const db = firebase.firestore();
+      db.collection("Adopt").set(JSON.stringify(AdoptData));
+    };
+    sendData();
+  }, []);
+
   return (
     <Layout>
       <Switch>
