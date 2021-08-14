@@ -8,22 +8,8 @@ import Shelter from "./pages/Shelter";
 import Donate from "./pages/Donate";
 import ScrollToTop from "./components/layout/ScrollToTop";
 import Simba from "./pages/Simba";
-import firebase from "./firebase";
-import { AdoptData } from "./components/Adopt/AdoptData";
 
 function App() {
-  const db = firebase.firestore();
-  AdoptData.forEach((item) => {
-    db.collection("Adopt")
-      .add(item)
-      .then((docref) => {
-        console.log("Document successfully written!", docref.id);
-      })
-      .catch((error) => {
-        console.error("Error writing document: ", error);
-      });
-  });
-
   return (
     <Layout>
       <Switch>
