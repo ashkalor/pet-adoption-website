@@ -2,7 +2,17 @@ import simba from "../../assets/img/adopt/simba.jpg";
 import leelo from "../../assets/img/adopt/leelo.png";
 import mylo from "../../assets/img/adopt/mylo.jpg";
 import river from "../../assets/img/adopt/river.jpg";
-
+import firebase from "firebase";
+import { visitLexicalEnvironment } from "typescript";
+const AdoptDataHandler = () => {
+  const db = firebase.firestore();
+  db.collection("Adopt")
+    .get()
+    .then((querySnapshot) => {
+      const documents = querySnapshot.docs.map((doc) => doc.data());
+      console.log(documents);
+    });
+};
 export const AdoptData = [
   {
     id: 1,
