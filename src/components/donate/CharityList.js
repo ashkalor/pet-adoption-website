@@ -5,6 +5,17 @@ import logo4 from "../../assets/img/donate/logo4.jpg";
 import logo5 from "../../assets/img/donate/logo5.jpg";
 import logo6 from "../../assets/img/donate/logo6.jpg";
 import logo7 from "../../assets/img/donate/logo7.jpg";
+import firebase from "firebase";
+
+const CharityDataHandler = () => {
+  const db = firebase.firestore();
+  db.collection("Donate")
+    .get()
+    .then((querySnapshot) => {
+      const documents = querySnapshot.docs.map((doc) => doc.data());
+      console.log(documents);
+    });
+};
 
 export const CharityList = [
   {

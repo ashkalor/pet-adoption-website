@@ -2,6 +2,17 @@ import logo1 from "../../assets/img/shelter/logo1.png";
 import logo2 from "../../assets/img/shelter/logo2.jpg";
 import logo3 from "../../assets/img/shelter/logo3.png";
 import logo4 from "../../assets/img/shelter/logo4.png";
+import firebase from "firebase";
+
+const ShelterDataHandler = () => {
+  const db = firebase.firestore();
+  db.collection("Shelter")
+    .get()
+    .then((querySnapshot) => {
+      const documents = querySnapshot.docs.map((doc) => doc.data());
+      console.log(documents);
+    });
+};
 
 export const ShelterData = [
   {
