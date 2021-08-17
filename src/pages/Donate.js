@@ -5,6 +5,7 @@ import Button from "../components/UI/Button/Button";
 import { useEffect, useState } from "react";
 import CharityItem from "../components/donate/CharityItem";
 import contentCover from "../assets/img/content-cover.jpg";
+import firebase from "../firebase";
 
 const Donate = () => {
   const [currentPage, setCurrentPage] = useState(1);

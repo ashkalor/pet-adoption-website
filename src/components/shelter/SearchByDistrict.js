@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { StateNDistrict } from "./StateNDistrictData";
-import { ShelterData } from "./ShelterData";
 import Button from "../UI/Button/Button";
 import firebase from "../../firebase";
 

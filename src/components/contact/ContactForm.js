@@ -1,5 +1,6 @@
 import useInput from "../../hooks/use-input";
 import Button from "../UI/Button/Button";
+import firebase from "../../firebase";
 
 const isNotEmpty = (value) => value.trim() !== "";
 const isEmail = (value) => value.includes("@");
@@ -64,6 +65,22 @@ const ContactForm = (props) => {
     if (!formIsValid) {
       return;
     }
+    const db = firebase.firestore();
+
+    db.collection("Contact")
+      .add({
+        firstName: firstNameValue,
+        lastName: lastNameValue,
+        email: emailValue,
+        subject: subjectValue,
+        message: messageValue,
+      })
+      .then(function (docRef) {
+        console.log("Document written with ID: ", docRef.id);
+      })
+      .catch(function (error) {
+        console.error("Error adding document: ", error);
+      });
 
     console.log("Submitted!");
     console.log(

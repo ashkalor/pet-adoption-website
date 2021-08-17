@@ -2,7 +2,6 @@ import HeroSmall from "../components/UI/Hero/HeroSmall";
 import contactCover from "../assets/img/contact/contactCover.jpg";
 import Card from "../components/UI/Card/Card";
 import { NavLink, Switch, Route, Redirect } from "react-router-dom";
-import { ShelterData } from "../components/shelter/ShelterData";
 import { useState, useEffect } from "react";
 import Button from "../components/UI/Button/Button";
 import contentCover from "../assets/img/content-cover.jpg";

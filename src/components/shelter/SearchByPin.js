@@ -1,6 +1,5 @@
 import useInput from "../../hooks/use-input";
 import Button from "../UI/Button/Button";
-import { ShelterData } from "./ShelterData";
 import { useEffect, useState } from "react";
 import firebase from "../../firebase";
 
