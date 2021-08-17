@@ -41,7 +41,7 @@ const Header = () => {
         </nav>
       </header>
       <div
-        className="w-screen bg-purple-700 relative"
+        className="w-screen bg-transparent relative"
         style={{ height: "5.7rem" }}
       ></div>
     </>
