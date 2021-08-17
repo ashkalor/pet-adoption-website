@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import { AdoptData } from "../components/Adopt/AdoptData";
 import Button from "../components/UI/Button/Button";
 import contentCover from "../assets/img/content-cover.jpg";
+import firebase from "firebase";
 
 const Adopt = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -15,6 +16,17 @@ const Adopt = () => {
   const [totalPages, setTotalPages] = useState(0);
   const [isNextDisabled, setIsNextDisabled] = useState(false);
   const [isPrevDisabled, setIsPrevDisabled] = useState(false);
+  const [adoptData, setAdoptData] = useState([]);
+
+  useEffect(() => {
+    const db = firebase.firestore();
+    db.collection("Adopt")
+      .get()
+      .then((querySnapshot) => {
+        const documents = querySnapshot.docs.map((doc) => doc.data());
+        console.log(documents);
+      });
+  }, []);
 
   useEffect(() => {
     setTotalPages(Math.round(AdoptData.length / itemsPerPage));
