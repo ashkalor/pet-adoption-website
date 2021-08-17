@@ -2,6 +2,7 @@ import useInput from "../../hooks/use-input";
 import Button from "../UI/Button/Button";
 import { ShelterData } from "./ShelterData";
 import { useEffect, useState } from "react";
+import firebase from "../../firebase";
 
 const SearchByPin = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -11,14 +12,24 @@ const SearchByPin = () => {
   const [isPrevDisabled, setIsPrevDisabled] = useState(false);
   const [formPin, setFormPin] = useState(null);
   const [formPinExists, setFormPinExists] = useState(false);
+  const [shelterData, setShelterData] = useState([]);
 
   useEffect(() => {
-    setTotalPages(Math.round(ShelterData.length / itemsPerPage));
+    const db = firebase.firestore();
+    db.collection("Shelter")
+      .get()
+      .then((querySnapshot) => {
+        const documents = querySnapshot.docs.map((doc) => doc.data());
+        setShelterData(documents);
+      });
+  }, []);
+  useEffect(() => {
+    setTotalPages(Math.round(shelterData.length / itemsPerPage));
     if (currentPage === totalPages) {
       setIsNextDisabled(true);
     }
     if (currentPage === 1) setIsPrevDisabled(true);
-  }, [itemsPerPage, currentPage, totalPages]);
+  }, [itemsPerPage, currentPage, totalPages, shelterData.length]);
 
   const nextHandler = (event) => {
     if (currentPage < totalPages) {
@@ -60,7 +71,7 @@ const SearchByPin = () => {
     setFormPin(pinValue);
 
     setFormPinExists(
-      ShelterData.map((item) => {
+      shelterData.map((item) => {
         if (Object.values(item).indexOf("test1") > -1) {
           return true;
         }
@@ -101,10 +112,11 @@ const SearchByPin = () => {
         {formPinExists && (
           <div>
             <div className="flex flex-col gap-8">
-              {ShelterData.slice(
-                currentPage * itemsPerPage - itemsPerPage,
-                currentPage * itemsPerPage
-              )
+              {shelterData
+                .slice(
+                  currentPage * itemsPerPage - itemsPerPage,
+                  currentPage * itemsPerPage
+                )
                 .filter((item) => item.pin === formPin)
                 .map((item) => {
                   return (
@@ -133,10 +145,12 @@ const SearchByPin = () => {
                   );
                 })}
             </div>
-            {ShelterData.slice(
-              currentPage * itemsPerPage - itemsPerPage,
-              currentPage * itemsPerPage
-            ).filter((item) => item.pin === formPin).length !== 0 && (
+            {shelterData
+              .slice(
+                currentPage * itemsPerPage - itemsPerPage,
+                currentPage * itemsPerPage
+              )
+              .filter((item) => item.pin === formPin).length !== 0 && (
               <div className="flex gap-4 justify-end mt-8">
                 <Button
                   onClick={prevHandler}
@@ -156,10 +170,12 @@ const SearchByPin = () => {
             )}
           </div>
         )}
-        {ShelterData.slice(
-          currentPage * itemsPerPage - itemsPerPage,
-          currentPage * itemsPerPage
-        ).filter((item) => item.pin === formPin).length === 0 &&
+        {shelterData
+          .slice(
+            currentPage * itemsPerPage - itemsPerPage,
+            currentPage * itemsPerPage
+          )
+          .filter((item) => item.pin === formPin).length === 0 &&
           formPinExists &&
           !pinHasError && (
             <div className="text-left ml-32 -mt-8 text-red-600">

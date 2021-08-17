@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { StateNDistrict } from "./StateNDistrictData";
 import { ShelterData } from "./ShelterData";
 import Button from "../UI/Button/Button";
+import firebase from "../../firebase";
 
 const SearchByDistrict = () => {
   const [stateData, setStateData] = useState([]);
@@ -14,6 +15,17 @@ const SearchByDistrict = () => {
   const [isPrevDisabled, setIsPrevDisabled] = useState(false);
   const [searchState, setSearchState] = useState("");
   const [searchDistrict, setSearchDistrict] = useState("");
+  const [shelterData, setShelterData] = useState([]);
+
+  useEffect(() => {
+    const db = firebase.firestore();
+    db.collection("Shelter")
+      .get()
+      .then((querySnapshot) => {
+        const documents = querySnapshot.docs.map((doc) => doc.data());
+        setShelterData(documents);
+      });
+  }, []);
 
   const districtHandler = (event) => {
     setSelectedDistrict(event.target.value);
@@ -27,12 +39,12 @@ const SearchByDistrict = () => {
     }
   };
   useEffect(() => {
-    setTotalPages(Math.round(ShelterData.length / itemsPerPage));
+    setTotalPages(Math.round(shelterData.length / itemsPerPage));
     if (currentPage === totalPages) {
       setIsNextDisabled(true);
     }
     if (currentPage === 1) setIsPrevDisabled(true);
-  }, [itemsPerPage, currentPage, totalPages]);
+  }, [itemsPerPage, currentPage, totalPages, shelterData.length]);
 
   const nextHandler = (event) => {
     if (currentPage < totalPages) {
@@ -120,10 +132,11 @@ const SearchByDistrict = () => {
       {searchState && searchDistrict && (
         <div className="mt-16">
           <div className="flex flex-col gap-8">
-            {ShelterData.slice(
-              currentPage * itemsPerPage - itemsPerPage,
-              currentPage * itemsPerPage
-            )
+            {shelterData
+              .slice(
+                currentPage * itemsPerPage - itemsPerPage,
+                currentPage * itemsPerPage
+              )
               .filter((item) => item.state === searchState)
               .map((item) => {
                 return (
@@ -151,10 +164,12 @@ const SearchByDistrict = () => {
               })}
           </div>
           {!(
-            ShelterData.slice(
-              currentPage * itemsPerPage - itemsPerPage,
-              currentPage * itemsPerPage
-            ).filter((item) => item.state === searchState).length === 0
+            shelterData
+              .slice(
+                currentPage * itemsPerPage - itemsPerPage,
+                currentPage * itemsPerPage
+              )
+              .filter((item) => item.state === searchState).length === 0
           ) && (
             <div className="flex gap-4 justify-end mt-8">
               <Button

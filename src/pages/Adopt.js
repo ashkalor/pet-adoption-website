@@ -5,10 +5,9 @@ import Filter from "../components/Adopt/Filter";
 import Card from "../components/UI/Card/Card";
 import HeroSmall from "../components/UI/Hero/HeroSmall";
 import { useState, useEffect } from "react";
-import { AdoptData } from "../components/Adopt/AdoptData";
 import Button from "../components/UI/Button/Button";
 import contentCover from "../assets/img/content-cover.jpg";
-import firebase from "firebase";
+import firebase from "../firebase";
 
 const Adopt = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -24,18 +23,17 @@ const Adopt = () => {
       .get()
       .then((querySnapshot) => {
         const documents = querySnapshot.docs.map((doc) => doc.data());
-        console.log(documents);
+        setAdoptData(documents);
       });
   }, []);
-
   useEffect(() => {
-    setTotalPages(Math.round(AdoptData.length / itemsPerPage));
+    setTotalPages(Math.round(adoptData.length / itemsPerPage));
     console.log(currentPage, totalPages);
     if (currentPage === totalPages) {
       setIsNextDisabled(true);
     }
     if (currentPage === 1) setIsPrevDisabled(true);
-  }, [itemsPerPage, currentPage, totalPages]);
+  }, [itemsPerPage, currentPage, totalPages, adoptData.length]);
 
   const nextHandler = (event) => {
     if (currentPage < totalPages) {
@@ -51,6 +49,7 @@ const Adopt = () => {
   };
   return (
     <>
+      {console.log(adoptData)}
       <HeroSmall title="Adoption" heroImg={heroAdopt} page="Adopt" />
       <div
         className="w-screen z-3 bg-center bg-no-repeat bg-cover bg-fixed py-10"
@@ -63,25 +62,27 @@ const Adopt = () => {
             <AdoptAbout />
             <Filter />
             <div className="grid grid-cols-2 gap-12 w-full">
-              {AdoptData.slice(
-                currentPage * itemsPerPage - itemsPerPage,
-                currentPage * itemsPerPage
-              ).map((item) => {
-                return (
-                  <AdoptCard
-                    key={item.id}
-                    image={item.image}
-                    name={item.name}
-                    gender={item.gender}
-                    age={item.age}
-                    breed={item.breed}
-                    vaccinated={item.vaccinated}
-                    petFriendly={item.petFriendly}
-                    specialNeeds={item.specialNeeds}
-                    childFriendly={item.childFriendly}
-                  />
-                );
-              })}
+              {adoptData
+                .slice(
+                  currentPage * itemsPerPage - itemsPerPage,
+                  currentPage * itemsPerPage
+                )
+                .map((item) => {
+                  return (
+                    <AdoptCard
+                      key={item.id}
+                      image={item.image}
+                      name={item.name}
+                      gender={item.gender}
+                      age={item.age}
+                      breed={item.breed}
+                      vaccinated={item.vaccinated}
+                      petFriendly={item.petFriendly}
+                      specialNeeds={item.specialNeeds}
+                      childFriendly={item.childFriendly}
+                    />
+                  );
+                })}
             </div>
             <div className="flex gap-4 justify-end mt-6">
               <Button
@@ -105,5 +106,4 @@ const Adopt = () => {
     </>
   );
 };
-
 export default Adopt;

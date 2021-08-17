@@ -8,7 +8,7 @@ import Button from "../components/UI/Button/Button";
 import contentCover from "../assets/img/content-cover.jpg";
 import SearchByPin from "../components/shelter/SearchByPin";
 import SearchByDistrict from "../components/shelter/SearchByDistrict";
-
+import firebase from "../firebase";
 const Shelter = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 4;
@@ -16,13 +16,25 @@ const Shelter = () => {
   const [isNextDisabled, setIsNextDisabled] = useState(false);
   const [isPrevDisabled, setIsPrevDisabled] = useState(false);
 
+  const [shelterData, setShelterData] = useState([]);
+
   useEffect(() => {
-    setTotalPages(Math.round(ShelterData.length / itemsPerPage));
+    const db = firebase.firestore();
+    db.collection("Shelter")
+      .get()
+      .then((querySnapshot) => {
+        const documents = querySnapshot.docs.map((doc) => doc.data());
+        setShelterData(documents);
+      });
+  }, []);
+
+  useEffect(() => {
+    setTotalPages(Math.round(shelterData.length / itemsPerPage));
     if (currentPage === totalPages) {
       setIsNextDisabled(true);
     }
     if (currentPage === 1) setIsPrevDisabled(true);
-  }, [itemsPerPage, currentPage, totalPages]);
+  }, [itemsPerPage, currentPage, totalPages, shelterData.length]);
 
   const nextHandler = (event) => {
     if (currentPage < totalPages) {
@@ -92,35 +104,37 @@ const Shelter = () => {
                 </Route>
                 <Route path="/shelter/show-all-places" exact>
                   <div className="flex flex-col gap-8 mb-16">
-                    {ShelterData.slice(
-                      currentPage * itemsPerPage - itemsPerPage,
-                      currentPage * itemsPerPage
-                    ).map((item) => {
-                      return (
-                        <div
-                          key={item.id}
-                          className="flex items-start p-8 bg-gray-300  rounded-xl gap-12"
-                        >
-                          <div className="overflow-hidden h-36 w-36 ">
-                            <img
-                              src={item.logo}
-                              alt="Shelter Logo"
-                              className="object-cover h-36 w-36 rounded-full"
-                            />
+                    {shelterData
+                      .slice(
+                        currentPage * itemsPerPage - itemsPerPage,
+                        currentPage * itemsPerPage
+                      )
+                      .map((item) => {
+                        return (
+                          <div
+                            key={item.id}
+                            className="flex items-start p-8 bg-gray-300  rounded-xl gap-12"
+                          >
+                            <div className="overflow-hidden h-36 w-36 ">
+                              <img
+                                src={item.logo}
+                                alt="Shelter Logo"
+                                className="object-cover h-36 w-36 rounded-full"
+                              />
+                            </div>
+                            <div>
+                              <p className=" text-xl font-semibold mb-3">
+                                {item.name}
+                              </p>
+                              <p>{`${item.address}`}</p>
+                              <p>{`${item.city}-${item.pin}, ${item.state}.`}</p>
+                              <span className="">{`Timings: `}</span>
+                              <span>{item.timings}</span>
+                              <p>{`Contact: ${item.contact} `}</p>
+                            </div>
                           </div>
-                          <div>
-                            <p className=" text-xl font-semibold mb-3">
-                              {item.name}
-                            </p>
-                            <p>{`${item.address}`}</p>
-                            <p>{`${item.city}-${item.pin}, ${item.state}.`}</p>
-                            <span className="">{`Timings: `}</span>
-                            <span>{item.timings}</span>
-                            <p>{`Contact: ${item.contact} `}</p>
-                          </div>
-                        </div>
-                      );
-                    })}
+                        );
+                      })}
                   </div>
                   <div className="flex gap-4 justify-end -mt-8">
                     <Button
