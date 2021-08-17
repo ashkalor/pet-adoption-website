@@ -42,7 +42,7 @@ const Header = () => {
       </header>
       <div
         className="w-screen bg-transparent relative"
-        style={{ height: "5.7rem" }}
+        style={{ height: "5rem" }}
       ></div>
     </>
   );
