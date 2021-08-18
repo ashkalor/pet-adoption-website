@@ -12,11 +12,13 @@ const Simba = () => {
 
   useEffect(() => {
     const db = firebase.firestore();
+
     db.collection("Adopt")
       .get()
       .then((querySnapshot) => {
         const documents = querySnapshot.docs.map((doc) => doc.data());
         setAdoptData(documents);
+        console.log(documents);
       });
   }, []);
   return (
@@ -32,40 +34,46 @@ const Simba = () => {
           backgroundColor: "white",
         }}
       >
-        <div className="meet">
-          <div className="outerImage">
-            <img
-              className="image"
-              src={adoptData[0].image}
-              alt="pet"
-              width="150rem"
-              height="150rem"
-            />
-          </div>
-          <div className="info">
-            <p
-              style={{
-                fontWeight: "bold",
-                fontSize: "30px",
-                marginBottom: "5%",
-              }}
-            >
-              MEET {adoptData[0].name}
-            </p>
-            <p className="line">
-              <strong>GENDER: </strong>
-              {adoptData[0].gender}
-            </p>
-            <p className="line">
-              <strong>AGE: </strong>
-              {adoptData[0].age}
-            </p>
-            <p className="line">
-              <strong>BREED: </strong>
-              {adoptData[0].breed}
-            </p>
-          </div>
-        </div>
+        {adoptData
+          .filter((item) => item.name === "Simba")
+          .map((item) => {
+            return (
+              <div className="meet">
+                <div className="outerImage">
+                  <img
+                    className="image"
+                    src={item.image}
+                    alt="pet"
+                    width="150rem"
+                    height="150rem"
+                  />
+                </div>
+                <div className="info">
+                  <p
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: "30px",
+                      marginBottom: "5%",
+                    }}
+                  >
+                    MEET {item.name}
+                  </p>
+                  <p className="line">
+                    <strong>GENDER: </strong>
+                    {item.gender}
+                  </p>
+                  <p className="line">
+                    <strong>AGE: </strong>
+                    {item.age}
+                  </p>
+                  <p className="line">
+                    <strong>BREED: </strong>
+                    {item.breed}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
 
         {/*about me*/}
         <div>
