@@ -17,7 +17,9 @@ function App() {
           <Redirect to="/home" />
         </Route>
         <Route path="/home" exact>
-          <Home />
+          <ScrollToTop>
+            <Home />
+          </ScrollToTop>
         </Route>
         <Route path="/adopt" exact>
           <ScrollToTop>
@@ -31,13 +33,19 @@ function App() {
           <Shelter />
         </Route>
         <Route path="/donate" exact>
-          <Donate />
+          <ScrollToTop>
+            <Donate />
+          </ScrollToTop>
         </Route>
         <Route path="/contact" exact>
-          <Contact />
+          <ScrollToTop>
+            <Contact />
+          </ScrollToTop>
         </Route>
         <Route path="/adopt/simba">
-          <Simba />
+          <ScrollToTop>
+            <Simba />
+          </ScrollToTop>
         </Route>
         <Route path="*" exact>
           <Redirect to="/home" />
