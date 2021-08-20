@@ -16,20 +16,20 @@ const Footer = () => {
           <h3 className="font-medium text-base ml-1 mt-2 ">PAWS</h3>
           <div className="flex">
             <span className="hover:text-black">
-              <FaFacebookF />
+              <FaFacebookF className="hover:text-purple-700" />
             </span>
             <span className="hover:text-black">
-              <AiFillInstagram />
+              <AiFillInstagram className="hover:text-purple-700" />
             </span>
             <span className="hover:text-black">
-              <AiOutlineTwitter />
+              <AiOutlineTwitter className="hover:text-purple-700" />
             </span>
           </div>
         </div>
 
         <div className={classes["footer-element"]}>
           <h3>
-            <Link to="/home" className="font-medium">
+            <Link to="/contact" className="font-medium">
               Contact Us
             </Link>
           </h3>
