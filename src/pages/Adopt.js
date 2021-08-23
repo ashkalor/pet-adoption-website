@@ -50,7 +50,7 @@ const Adopt = () => {
   return (
     <>
       {console.log(adoptData)}
-      <HeroSmall title="Adoption" heroImg={heroAdopt} page="Adopt" />
+      <HeroSmall title="Adopt" heroImg={heroAdopt} />
       <div
         className="w-screen z-3 bg-center bg-no-repeat bg-cover bg-fixed py-10"
         style={{
