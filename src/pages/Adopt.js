@@ -1,4 +1,3 @@
-import heroAdopt from "../assets/img/adopt/hero-adopt.jpg";
 import AdoptAbout from "../components/Adopt/AdoptAbout";
 import AdoptCard from "../components/Adopt/AdoptCard";
 import Filter from "../components/Adopt/Filter";
@@ -8,6 +7,7 @@ import { useState, useEffect } from "react";
 import Button from "../components/UI/Button/Button";
 import contentCover from "../assets/img/content-cover.jpg";
 import firebase from "../firebase";
+import contactCover from "../assets/img/contact/contactCover.jpg";
 
 const Adopt = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -50,7 +50,7 @@ const Adopt = () => {
   return (
     <>
       {console.log(adoptData)}
-      <HeroSmall title="Adopt" heroImg={heroAdopt} />
+      <HeroSmall title="Adopt" heroImg={contactCover} />
       <div
         className="w-screen z-3 bg-center bg-no-repeat bg-cover bg-fixed py-10"
         style={{
