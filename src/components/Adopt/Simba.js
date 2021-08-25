@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
-import heroAdopt from "../assets/img/adopt/hero-adopt.jpg";
-import HeroSmall from "../components/UI/Hero/HeroSmall";
-import "../components/Adopt/pet.css";
-import "../components/Adopt/AdoptCard.css";
-import firebase from "../firebase";
-import Button from "../components/UI/Button/Button";
+
+import HeroSmall from "../UI/Hero/HeroSmall";
+import "./pet.css";
+import "./AdoptCard.css";
+import firebase from "../../firebase";
+import Button from "../UI/Button/Button";
 import { useState, useEffect } from "react";
+import contactCover from "../../assets/img/contact/contactCover.jpg";
 
 const Simba = () => {
   const [adoptData, setAdoptData] = useState([]);
@@ -23,7 +24,7 @@ const Simba = () => {
   }, []);
   return (
     <>
-      <HeroSmall title="Adoption" heroImg={heroAdopt} page="Adopt" />
+      <HeroSmall title="Adoption" heroImg={contactCover} />
       {/*meet me*/}
       <div
         style={{

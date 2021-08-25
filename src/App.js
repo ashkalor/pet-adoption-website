@@ -7,7 +7,7 @@ import Contact from "./pages/Contact";
 import Shelter from "./pages/Shelter";
 import Donate from "./pages/Donate";
 import ScrollToTop from "./components/layout/ScrollToTop";
-import Simba from "./pages/Simba";
+import Simba from "./components/Adopt/Simba";
 
 function App() {
   return (
