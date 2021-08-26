@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.9bf4350c.chunk.css",
-    "main.js": "/static/js/main.cbaa2f56.chunk.js",
-    "main.js.map": "/static/js/main.cbaa2f56.chunk.js.map",
+    "main.js": "/static/js/main.e6c97fb3.chunk.js",
+    "main.js.map": "/static/js/main.e6c97fb3.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d5263075.js",
     "runtime-main.js.map": "/static/js/runtime-main.d5263075.js.map",
     "static/js/2.23305c6a.chunk.js": "/static/js/2.23305c6a.chunk.js",
@@ -17,7 +17,6 @@
     "static/media/eventcard3.04162446.jpg": "/static/media/eventcard3.04162446.jpg",
     "static/media/events-panel.bfaf9308.jpg": "/static/media/events-panel.bfaf9308.jpg",
     "static/media/hero-about.f6a27455.png": "/static/media/hero-about.f6a27455.png",
-    "static/media/hero-adopt.9522266a.jpg": "/static/media/hero-adopt.9522266a.jpg",
     "static/media/hero-cover.349b915b.jpg": "/static/media/hero-cover.349b915b.jpg",
     "static/media/hero.efdddf40.png": "/static/media/hero.efdddf40.png",
     "static/media/stories-panel.c1b1714c.jpg": "/static/media/stories-panel.c1b1714c.jpg",
@@ -29,6 +28,6 @@
     "static/js/runtime-main.d5263075.js",
     "static/js/2.23305c6a.chunk.js",
     "static/css/main.9bf4350c.chunk.css",
-    "static/js/main.cbaa2f56.chunk.js"
+    "static/js/main.e6c97fb3.chunk.js"
   ]
 }
