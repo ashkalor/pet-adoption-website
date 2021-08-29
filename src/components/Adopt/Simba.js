@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-
 import HeroSmall from "../UI/Hero/HeroSmall";
 import "./pet.css";
 import "./AdoptCard.css";
