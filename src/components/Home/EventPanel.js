@@ -1,5 +1,4 @@
 import Card from "../UI/Card/Card";
-import Button from "../UI/Button/Button";
 import eventImg from "../../assets/img/home/events-panel.jpg";
 import EventItem from "./EventItem";
 import { EventData } from "./EventData";
@@ -20,7 +19,6 @@ const EventPanel = (props) => {
           maiores, dolore odio esse dolorem hic, numquam nemo. Sequi ducimus
           quasi dolore nulla?
         </p>
-        <Button className="font-medium">SEE ALL EVENTS</Button>
         <p className="mt-6 font-medium text-xl">Upcoming Events : </p>
       </div>
       <div className="col-span-1 row-span-3 mt-3 mx-14 ">
@@ -32,7 +30,7 @@ const EventPanel = (props) => {
         />
       </div>
       <Carousel
-        className="mt-8"
+        className="-ml-3"
         length={EventData.length}
         show={2}
         infiniteLoop={false}

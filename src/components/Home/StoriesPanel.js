@@ -1,5 +1,4 @@
 import Card from "../UI/Card/Card";
-import Button from "../UI/Button/Button";
 import storiesImg from "../../assets/img/home/stories-panel.jpg";
 import { StoriesData } from "./StoriesData";
 import Carousel from "../UI/Carousel/Carousel";
@@ -18,7 +17,6 @@ const StoriesPanel = (props) => {
           maiores, dolore odio esse dolorem hic, numquam nemo. Sequi ducimus
           quasi dolore nulla?
         </p>
-        <Button className="font-medium">SEE ALL STORIES</Button>
         <Carousel
           className=""
           length={StoriesData.length}
