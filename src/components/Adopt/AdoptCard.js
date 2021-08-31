@@ -1,5 +1,5 @@
 import Button from "../UI/Button/Button";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaSyringe } from "react-icons/fa";
 import { MdChildFriendly } from "react-icons/md";
 import { GiHeartPlus, GiJumpingDog } from "react-icons/gi";
@@ -73,7 +73,7 @@ const AdoptCard = ({
             </div>
           )}
         </div>
-        <Link to="/adopt/simba">        
+        <Link to={`/adopt/${name}`}>
           <Button className=" w-44">More Info</Button>
         </Link>
       </div>
