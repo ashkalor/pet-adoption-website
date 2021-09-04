@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import HeroSmall from "../UI/Hero/HeroSmall";
 import "./pet.css";
 import "./AdoptCard.css";
@@ -7,9 +7,9 @@ import Button from "../UI/Button/Button";
 import { useState, useEffect } from "react";
 import contactCover from "../../assets/img/contact/contactCover.jpg";
 
-const Simba = () => {
+const Pet = () => {
   const [adoptData, setAdoptData] = useState([]);
-
+  const params = useParams();
   useEffect(() => {
     const db = firebase.firestore();
 
@@ -23,6 +23,7 @@ const Simba = () => {
   }, []);
   return (
     <>
+      {console.log(params.petName)}
       <HeroSmall title="Adoption" heroImg={contactCover} />
       <div
         style={{
@@ -34,7 +35,7 @@ const Simba = () => {
         }}
       >
         {adoptData
-          .filter((item) => item.name === "Simba")
+          .filter((item) => item.name === params.petName)
           .map((item) => {
             return (
               <div className="meet">
@@ -106,4 +107,4 @@ const Simba = () => {
   );
 };
 
-export default Simba;
+export default Pet;
