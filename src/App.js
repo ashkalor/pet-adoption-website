@@ -7,10 +7,7 @@ import Contact from "./pages/Contact";
 import Shelter from "./pages/Shelter";
 import Donate from "./pages/Donate";
 import ScrollToTop from "./components/layout/ScrollToTop";
-import Simba from "./components/Adopt/Simba";
-import River from "./components/Adopt/River";
-import Mylo from "./components/Adopt/Mylo";
-import Leelo from "./components/Adopt/Leelo";
+import Pet from "./components/Adopt/Pet";
 
 function App() {
   return (
@@ -45,24 +42,9 @@ function App() {
             <Contact />
           </ScrollToTop>
         </Route>
-        <Route path="/adopt/simba">
+        <Route path="/adopt/:petName">
           <ScrollToTop>
-            <Simba />
-          </ScrollToTop>
-        </Route>
-        <Route path="/adopt/river">
-          <ScrollToTop>
-            <River />
-          </ScrollToTop>
-        </Route>
-        <Route path="/adopt/mylo">
-          <ScrollToTop>
-            <Mylo />
-          </ScrollToTop>
-        </Route>
-        <Route path="/adopt/leelo">
-          <ScrollToTop>
-            <Leelo />
+            <Pet />
           </ScrollToTop>
         </Route>
         <Route path="*" exact>
