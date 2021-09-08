@@ -1,5 +1,5 @@
 import "./Filter.css";
-//import "tachyons";
+
 import Button from "../UI/Button/Button";
 const Filter = () => {
   return (

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { FaSyringe } from "react-icons/fa";
 import { MdChildFriendly } from "react-icons/md";
 import { GiHeartPlus, GiJumpingDog } from "react-icons/gi";
-//import HeroSmall from "../UI/Hero/HeroSmall";
 
 const AdoptCard = ({
   image,
