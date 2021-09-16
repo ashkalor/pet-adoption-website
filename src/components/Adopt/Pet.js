@@ -5,7 +5,7 @@ import "./AdoptCard.css";
 import firebase from "../../firebase";
 import Button from "../UI/Button/Button";
 import { useState, useEffect } from "react";
-import contactCover from "../../assets/img/contact/contactCover.jpg";
+import contactCover from "../../assets/img/UI/contactCover.jpg";
 
 const Pet = () => {
   const [adoptData, setAdoptData] = useState([]);
