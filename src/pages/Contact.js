@@ -1,5 +1,5 @@
 import HeroSmall from "../components/UI/Hero/HeroSmall";
-import contactCover from "../assets/img/contact/contactCover.jpg";
+import contactCover from "../assets/img/UI/contactCover.jpg";
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import Card from "../components/UI/Card/Card";
 import ContactForm from "../components/contact/ContactForm";

@@ -1,5 +1,5 @@
 import HeroSmall from "../components/UI/Hero/HeroSmall";
-import contactCover from "../assets/img/contact/contactCover.jpg";
+import contactCover from "../assets/img/UI/contactCover.jpg";
 import Card from "../components/UI/Card/Card";
 import { NavLink, Switch, Route, Redirect } from "react-router-dom";
 import { useState, useEffect } from "react";

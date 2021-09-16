@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import Button from "../components/UI/Button/Button";
 import contentCover from "../assets/img/content-cover.jpg";
 import firebase from "../firebase";
-import contactCover from "../assets/img/contact/contactCover.jpg";
+import contactCover from "../assets/img/UI/contactCover.jpg";
 
 const Adopt = () => {
   const [currentPage, setCurrentPage] = useState(1);
