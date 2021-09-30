@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function useWindowSize() {
   const isSSR = typeof window !== "undefined";
   const [windowSize, setWindowSize] = React.useState({
