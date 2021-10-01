@@ -8,6 +8,7 @@ import Button from "../components/UI/Button/Button";
 import contentCover from "../assets/img/content-cover.jpg";
 import firebase from "../firebase";
 import contactCover from "../assets/img/UI/contactCover.jpg";
+import useWindowSize from "../hooks/use-windowSize";
 
 const Adopt = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -47,62 +48,66 @@ const Adopt = () => {
       setCurrentPage((prevCurrentPage) => prevCurrentPage - 1);
     }
   };
+  const { width, height } = useWindowSize();
   return (
     <>
-      {console.log(adoptData)}
-      <HeroSmall title="Adopt" heroImg={contactCover} />
-      <div
-        className="w-screen z-3 bg-center bg-no-repeat bg-cover bg-fixed py-10"
-        style={{
-          backgroundImage: `url(${contentCover})`,
-        }}
-      >
-        <Card>
-          <div style={{ margin: "0 0", padding: "3rem 10%" }}>
-            <AdoptAbout />
-            <Filter />
-            <div className="grid grid-cols-2 gap-12 w-full">
-              {adoptData
-                .slice(
-                  currentPage * itemsPerPage - itemsPerPage,
-                  currentPage * itemsPerPage
-                )
-                .map((item) => {
-                  return (
-                    <AdoptCard
-                      key={item.id}
-                      image={item.image}
-                      name={item.name}
-                      gender={item.gender}
-                      age={item.age}
-                      breed={item.breed}
-                      vaccinated={item.vaccinated}
-                      petFriendly={item.petFriendly}
-                      specialNeeds={item.specialNeeds}
-                      childFriendly={item.childFriendly}
-                    />
-                  );
-                })}
-            </div>
-            <div className="flex gap-4 justify-end mt-6">
-              <Button
-                onClick={prevHandler}
-                disabled={isPrevDisabled}
-                className="disabled:opacity-20"
-              >
-                Back
-              </Button>
-              <Button
-                onClick={nextHandler}
-                disabled={isNextDisabled}
-                className="disabled:opacity-20"
-              >
-                Next
-              </Button>
-            </div>
+      {width > 500 && height > 500 && (
+        <div>
+          <HeroSmall title="Adopt" heroImg={contactCover} />
+          <div
+            className="w-screen z-3 bg-center bg-no-repeat bg-cover bg-fixed py-10"
+            style={{
+              backgroundImage: `url(${contentCover})`,
+            }}
+          >
+            <Card>
+              <div style={{ margin: "0 0", padding: "3rem 10%" }}>
+                <AdoptAbout />
+                <Filter />
+                <div className="grid grid-cols-2 gap-12 w-full">
+                  {adoptData
+                    .slice(
+                      currentPage * itemsPerPage - itemsPerPage,
+                      currentPage * itemsPerPage
+                    )
+                    .map((item) => {
+                      return (
+                        <AdoptCard
+                          key={item.id}
+                          image={item.image}
+                          name={item.name}
+                          gender={item.gender}
+                          age={item.age}
+                          breed={item.breed}
+                          vaccinated={item.vaccinated}
+                          petFriendly={item.petFriendly}
+                          specialNeeds={item.specialNeeds}
+                          childFriendly={item.childFriendly}
+                        />
+                      );
+                    })}
+                </div>
+                <div className="flex gap-4 justify-end mt-6">
+                  <Button
+                    onClick={prevHandler}
+                    disabled={isPrevDisabled}
+                    className="disabled:opacity-20"
+                  >
+                    Back
+                  </Button>
+                  <Button
+                    onClick={nextHandler}
+                    disabled={isNextDisabled}
+                    className="disabled:opacity-20"
+                  >
+                    Next
+                  </Button>
+                </div>
+              </div>
+            </Card>
           </div>
-        </Card>
-      </div>
+        </div>
+      )}
     </>
   );
 };
